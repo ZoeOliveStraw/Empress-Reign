@@ -10,7 +10,8 @@ public class Interactable_Pickup : Interactable
 
     public override void OnInteracted()
     {
-        PlayerInventory pi = SceneLoader.Instance.GetPlayer().GetComponent<PlayerInventory>();
+        PlayerInventory pi = GetPlayerReference().GetComponent<PlayerInventory>();
+        if (pi == null) return;
         InventoryStack stack = new InventoryStack();
         stack.ItemId = itemId;
         stack.Quantity = quantity;

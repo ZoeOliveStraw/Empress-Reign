@@ -22,7 +22,7 @@ namespace Player.Player_State_Machine
 
         public override void Update()
         {
-            playerMove?.Move(_input.Move, stats.MoveSpeed, stats.Acceleration);
+            //playerMove?.Move(_input.Move, stats.MoveSpeed, stats.Acceleration);
             playerLook?.Look(_input.Look);
         }
 

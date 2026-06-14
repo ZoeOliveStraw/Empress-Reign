@@ -14,6 +14,11 @@ public class PlayerInventory : MonoBehaviour
     
     public void AddItem(InventoryStack item)
     {
+        if (ItemManager.Instance == null)
+        {
+            Debug.LogWarning($"NO ITEM MANAGER PRESENT");
+            return;
+        }
         int quantity = item.Quantity;
         item.Quantity = 1;
         for(int i = 0; i < quantity; i++) AddItemSingle(item.ItemId);
@@ -21,6 +26,11 @@ public class PlayerInventory : MonoBehaviour
 
     private void AddItemSingle(EnumItemIds id)
     {
+        if (ItemManager.Instance == null)
+        {
+            Debug.LogWarning($"NO ITEM MANAGER PRESENT");
+            return;
+        }
         SO_InventoryItem item = ItemManager.Instance.GetItemFromID(id);
         for (int i = 0; i < _inventoryItems.Count; i++)
         {

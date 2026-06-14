@@ -25,7 +25,7 @@ namespace Managers
         
             if (player == null)
             {
-                player = GameObject.FindGameObjectWithTag("Player");
+                player = GameObject.FindGameObjectWithTag("PlayerController");
             }
         }
 

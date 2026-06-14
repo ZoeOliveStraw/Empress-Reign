@@ -41,7 +41,7 @@ public class PlayerState_Attacking : PlayerStateAbstract
 
     public override void Update()
     {
-        playerMove?.Move(_input.Move, stats.MoveSpeed, stats.Acceleration);
+        //playerMove?.Move(_input.Move, stats.MoveSpeed, stats.Acceleration);
         playerLook?.Look(_input.Look);
         remainingAttackDuration -= Time.deltaTime;
         remainingDamageDuration -= Time.deltaTime;

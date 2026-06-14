@@ -1,3 +1,4 @@
+using Ability_System;
 using Interactables;
 using TMPro;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace Player
         private void Start()
         {
             _input.Input.Player.Interact.performed += ctx => OnInteract();
+            _input.Input.Player.Interact.performed += ctx => OnInteractAbility();
         }
 
         // Update is called once per frame
@@ -56,6 +58,11 @@ namespace Player
             {
                 _currentInteractable.OnInteracted();
             }
+        }
+
+        private void OnInteractAbility()
+        {
+            GetComponent<AbilityManager>().UseAbility("Interact");
         }
     }
 }

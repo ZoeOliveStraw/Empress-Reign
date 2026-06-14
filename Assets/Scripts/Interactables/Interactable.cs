@@ -1,4 +1,5 @@
 using System;
+using Managers;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -22,6 +23,12 @@ namespace Interactables
         private void DebugMethod()
         {
             Debug.LogWarning($"{label} SAYS PEEPEE POOPOO");
+        }
+
+        public Transform GetPlayerReference()
+        {
+            if(SceneLoader.Instance != null) return SceneLoader.Instance.GetPlayer().transform;
+            return GameObject.FindGameObjectWithTag("PlayerController").transform;
         }
     }
 }

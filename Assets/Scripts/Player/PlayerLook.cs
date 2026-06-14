@@ -5,16 +5,13 @@ namespace Player
 {
     public class PlayerLook : MonoBehaviour
     {
-        [SerializeField] private PlayerStats stats;
+        [SerializeField] private float lookSensitivity = 100f;
         [SerializeField] private Transform cam;
         [SerializeField] private Transform camAnchor;
-        [SerializeField] private float bobMaximum;
-        [SerializeField] private float bobSpeed;
-        [SerializeField] private float currentBob;
         [SerializeField] private bool ascending = true;
-        
+
+        private PlayerInputHandler input;
         private float _yaw;
-        private float _currentMoveSpeed;
         private float _xRotation = 0f;
         
 
@@ -31,8 +28,8 @@ namespace Player
 
         public void Look(Vector2 lookVector)
         {
-            float mouseX = lookVector.x * Time.deltaTime * stats.LookSpeed;
-            float mouseY = lookVector.y * Time.deltaTime * stats.LookSpeed;
+            float mouseX = lookVector.x * Time.deltaTime * lookSensitivity;
+            float mouseY = lookVector.y * Time.deltaTime * lookSensitivity;
 
             // accumulate pitch
             _xRotation -= mouseY;

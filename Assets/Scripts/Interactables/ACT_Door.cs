@@ -31,7 +31,7 @@ public class ACT_Door : Activator
 
     private float GetTargetRotation()
     {
-        Transform player = SceneLoader.Instance.GetPlayer().transform;
+        Transform player = GetPlayerTransform();
         Vector3 toPlayer = player.position - doorHinge.position;
         float side = Vector3.Dot(doorHinge.right, toPlayer);
         float angle = side > 0 ? openAmount : -openAmount;
