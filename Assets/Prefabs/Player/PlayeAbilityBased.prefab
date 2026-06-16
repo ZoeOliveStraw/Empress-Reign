@@ -144,6 +144,8 @@ GameObject:
   - component: {fileID: 4699590472996920510}
   - component: {fileID: 728765255636923342}
   - component: {fileID: 6769197957520476014}
+  - component: {fileID: 8609963200189489358}
+  - component: {fileID: 7092193679832571735}
   m_Layer: 0
   m_Name: Jump
   m_TagString: Untagged
@@ -179,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Ability
   abilityName: Jump
+  abilityOwner: {fileID: 0}
 --- !u!114 &6769197957520476014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,11 +194,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f00d81a4e927e654287f9c18b2367ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskAddForceRigidbody
-  startDelay: 0
-  cooldown: 0
   debugMessage: 
   myAbility: {fileID: 0}
-  JumpForce: 0
+  JumpForce: 400
+--- !u!114 &8609963200189489358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780194123262008943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ceafe2ee92da3f4094af037fcb79dd1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskCooldown
+  debugMessage: 
+  myAbility: {fileID: 0}
+  cooldown: 2
+--- !u!114 &7092193679832571735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780194123262008943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2fb664f074264840b8a85c5fdd0f017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskMustBeGrounded
+  debugMessage: 
+  myAbility: {fileID: 0}
 --- !u!1 &3168722495532692587
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,6 +395,8 @@ Transform:
   m_Children:
   - {fileID: 7386154820582998059}
   - {fileID: 4699590472996920510}
+  - {fileID: 1472993279400991288}
+  - {fileID: 8783425467013166544}
   m_Father: {fileID: 7265933951121955283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3283865634527628578
@@ -414,6 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Ability
   abilityName: Interact
+  abilityOwner: {fileID: 0}
 --- !u!114 &5161217963873009498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,8 +459,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22ef645f8dfbdc42acdc8913ddfcf5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Task
-  startDelay: 0
-  cooldown: 0
   debugMessage: Interact 1
   myAbility: {fileID: 0}
 --- !u!114 &4678704768051720402
@@ -442,8 +473,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c22ef645f8dfbdc42acdc8913ddfcf5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Task
-  startDelay: 1
-  cooldown: 0
   debugMessage: Interact 2
   myAbility: {fileID: 0}
 --- !u!1 &3552159772589896598
@@ -591,7 +620,6 @@ GameObject:
   - component: {fileID: 5038955925817960501}
   - component: {fileID: 3237052208598648686}
   - component: {fileID: 1529692920395861927}
-  - component: {fileID: 5756902947971857451}
   m_Layer: 0
   m_Name: PlayeAbilityBased
   m_TagString: Player
@@ -680,6 +708,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c1eabea40307946b337e57da3d86c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  Move: {fileID: 361868382425418400}
+  Jump: {fileID: 728765255636923342}
+  Look: {fileID: 9159016061974335846}
+  cameraAnchor: {fileID: 5890752853312993167}
 --- !u!114 &1855033542441798731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,23 +776,6 @@ MonoBehaviour:
   cam: {fileID: 7122247723154876363}
   camAnchor: {fileID: 5890752853312993167}
   ascending: 1
---- !u!114 &5756902947971857451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3779592458743203687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66316ae6e91b9f444b4114811e589c81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerMove
-  MoveSpeed: 10
-  Accelleration: 5
-  TankControls: 0
-  jumpForce: 25
-  rb: {fileID: 4337051164853943440}
 --- !u!1 &4282715643849378537
 GameObject:
   m_ObjectHideFlags: 0
@@ -828,6 +843,68 @@ Transform:
   - {fileID: 4307198829020074690}
   m_Father: {fileID: 7265933951121955283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4531056645480595391
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8783425467013166544}
+  - component: {fileID: 9159016061974335846}
+  - component: {fileID: 4503689987629080019}
+  m_Layer: 0
+  m_Name: Look
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8783425467013166544
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4531056645480595391}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6653011323653295256}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9159016061974335846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4531056645480595391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4429f4a76c3cf2f4da7824eac822d5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Ability
+  abilityName: Look
+  abilityOwner: {fileID: 0}
+--- !u!114 &4503689987629080019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4531056645480595391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9641590d2dec5649bbf8334435959b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TaskPlayerLook
+  debugMessage: 
+  myAbility: {fileID: 0}
+  lookSensitivity: 10
 --- !u!1 &4629873691041506996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,3 +1134,66 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4228367705991539285}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9011374318286711402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1472993279400991288}
+  - component: {fileID: 361868382425418400}
+  - component: {fileID: 6046453883910637682}
+  m_Layer: 0
+  m_Name: Move
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1472993279400991288
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011374318286711402}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6653011323653295256}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &361868382425418400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011374318286711402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4429f4a76c3cf2f4da7824eac822d5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Ability
+  abilityName: Move
+  abilityOwner: {fileID: 0}
+--- !u!114 &6046453883910637682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9011374318286711402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8019ad2497225a498bb84b0feb30e49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Tasks.TaskMovementRigidbody
+  debugMessage: 
+  myAbility: {fileID: 0}
+  MoveSpeed: 8
+  Accelleration: 10

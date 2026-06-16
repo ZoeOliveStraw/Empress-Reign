@@ -17,8 +17,9 @@ namespace Ability_System
         }
 
         public string abilityName;
-
-        private List<Task> tasks;
+        public GameObject abilityOwner;
+        private List<AbilityTask> tasks;
+        public AbilityParams myParams;
 
         private void Start()
         {
@@ -27,16 +28,24 @@ namespace Ability_System
 
         private void GetTasks()
         {
-            tasks = GetComponents<Task>().ToList();
-            foreach (Task task in tasks)
+            tasks = GetComponents<AbilityTask>().ToList();
+            foreach (AbilityTask task in tasks)
                 task.myAbility = this;
         }
 
         public void Use(AbilityParams abilityParams = default)
         {
-            foreach (Task task in tasks)
+            myParams = abilityParams;
+            foreach (AbilityTask task in tasks)
             {
-                task.abilityParameters = abilityParams;
+                if (!task.CanExecuteTask())
+                {
+                    Debug.LogWarning("Can't execute task!");
+                    return;
+                }
+            }
+            foreach (AbilityTask task in tasks)
+            {
                 task.Execute();
             }
         }

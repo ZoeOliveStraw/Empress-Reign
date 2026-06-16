@@ -18,19 +18,21 @@ namespace Ability_System
         private void GetAbilities()
         {
             abilities = abilityContainer.GetComponentsInChildren<Ability>().ToList();
+            foreach (Ability ability in abilities)
+            {
+                ability.abilityOwner = gameObject;
+            }
         }
 
-        public bool UseAbility(string abilityName, AbilityParams abilityParams = default)
+        public void UseAbility(string abilityName, AbilityParams abilityParams = default)
         {
             foreach (Ability ability in abilities)
             {
                 if (ability.name.Equals(abilityName))
                 {
-                    ability.Use();
-                    return true;
+                    ability.Use(abilityParams);
                 }
             }
-            return false;
         }
     }
 }
