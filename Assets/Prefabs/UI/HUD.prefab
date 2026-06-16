@@ -1637,8 +1637,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HUD_Controller
   meterHealth: {fileID: 148812148659862640}
-  meterStamina: {fileID: 0}
-  meterMana: {fileID: 0}
+  meterStamina: {fileID: 3015274082131976163}
+  meterMana: {fileID: 8543002982536342341}
   selectionLabel: {fileID: 0}
 --- !u!1 &7287636664255820322
 GameObject:

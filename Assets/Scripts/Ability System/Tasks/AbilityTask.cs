@@ -17,7 +17,7 @@ namespace Ability_System
 
         public virtual void Execute()
         {
-            
+            Debug.Log(debugMessage);
         }
 
         public virtual bool CanExecuteTask()
