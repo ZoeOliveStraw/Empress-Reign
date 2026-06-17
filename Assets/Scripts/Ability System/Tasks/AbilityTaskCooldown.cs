@@ -11,6 +11,7 @@ public class AbilityTaskCooldown : AbilityTask
 
     public override void Execute()
     {
+        base.Execute();
         isOnCooldown = true;
         _cooldownTimer = 0;
     }

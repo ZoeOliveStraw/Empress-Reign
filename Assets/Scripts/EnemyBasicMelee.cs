@@ -6,11 +6,9 @@ using UnityEngine;
 public class EnemyBasicMelee : MonoBehaviour
 {
     [SerializeField] private AbilityManager abilityManager;
-
     [SerializeField] private Ability move;
-    
-    [SerializeField] private float PlayerDetectionRange;
-    [SerializeField] private GameObject Player;
+    [SerializeField] private Ability attack;
+    private GameObject Player;
 
     private void Start()
     {
@@ -31,5 +29,7 @@ public class EnemyBasicMelee : MonoBehaviour
     private void EnemyLogic()
     {
         move.Use(new AbilityParams(targetGameObject: Player));
+        if(Vector3.Distance(transform.position, Player.transform.position) <= 2f) 
+            attack.Use(new AbilityParams(targetGameObject: Player));
     }
 }

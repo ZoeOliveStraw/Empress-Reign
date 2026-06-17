@@ -10,7 +10,6 @@ public class AbilityTaskDistanceToTarget : AbilityTask
     public override bool CanExecuteTask()
     {
         var distance = Vector3.Distance(myAbility.myParams.TargetGameObject.transform.position, myAbility.abilityOwner.transform.position);
-        Debug.LogWarning($"Distance: {distance}");
         if(minimum) return distance > distanceToTarget; 
         return distance <= distanceToTarget;
     }

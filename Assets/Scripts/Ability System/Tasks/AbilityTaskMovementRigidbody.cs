@@ -18,6 +18,7 @@ namespace Ability_System.Tasks
 
         public override void Execute()
         {
+            base.Execute();
             if (characterToMove == null)
             {
                 characterToMove = myAbility.abilityOwner.transform;

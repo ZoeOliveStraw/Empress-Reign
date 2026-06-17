@@ -13,11 +13,12 @@ namespace Ability_System
 
         private float timeSinceStartRequested;
         private float remainingCooldown;
-        public Ability myAbility;
+        [HideInInspector] public Ability myAbility;
 
         public virtual void Execute()
         {
-            Debug.Log(debugMessage);
+            if(!debugMessage.Equals(""))
+                Debug.Log(debugMessage);
         }
 
         public virtual bool CanExecuteTask()

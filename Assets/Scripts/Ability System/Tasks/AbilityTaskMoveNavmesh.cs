@@ -18,7 +18,7 @@ namespace Ability_System.Tasks
 
         public override void Execute()
         {
-            Debug.Log("EXECUTED");
+            base.Execute();
             if(navMeshAgent == null) GetNavMeshAgent();
             navMeshAgent.SetDestination(myAbility.myParams.TargetGameObject.transform.position);
         }

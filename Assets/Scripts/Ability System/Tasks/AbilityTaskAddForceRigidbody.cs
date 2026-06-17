@@ -9,6 +9,7 @@ public class AbilityTaskAddForceRigidbody : AbilityTask
 
     public override void Execute()
     {
+        base.Execute();
         if (rb == null)
         {
             rb = myAbility.myParams.AffectedGameObject.GetComponent<Rigidbody>();

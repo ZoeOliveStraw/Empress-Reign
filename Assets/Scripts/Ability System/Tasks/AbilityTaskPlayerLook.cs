@@ -23,6 +23,7 @@ public class AbilityTaskPlayerLook : AbilityTask
     
     public override void Execute()
     {
+        base.Execute();
         if (camAnchor == null)
         {
             camAnchor = myAbility.abilityOwner.GetComponent<PlayerController>().cameraAnchor;
