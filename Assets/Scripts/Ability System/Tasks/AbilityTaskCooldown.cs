@@ -9,7 +9,7 @@ public class AbilityTaskCooldown : AbilityTask
     private float _cooldownTimer = 0;
     private bool isOnCooldown = false;
 
-    public override void Execute()
+    protected override void Execute()
     {
         base.Execute();
         isOnCooldown = true;

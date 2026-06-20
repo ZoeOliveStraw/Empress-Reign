@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Ability
   abilityName: Jump
-  abilityOwner: {fileID: 0}
+  abilityOwner: {fileID: 3779592458743203687}
 --- !u!114 &6769197957520476014
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskAddForceRigidbody
   debugMessage: 
+  DelayBeforeExecution: 0
   myAbility: {fileID: 0}
   JumpForce: 400
 --- !u!114 &8609963200189489358
@@ -210,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskCooldown
   debugMessage: 
+  DelayBeforeExecution: 0
   myAbility: {fileID: 0}
   cooldown: 2
 --- !u!114 &7092193679832571735
@@ -225,8 +227,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskMustBeGrounded
   debugMessage: 
+  DelayBeforeExecution: 0
   myAbility: {fileID: 0}
-  playerGroundCheck: {fileID: 0}
+  playerGroundCheck: {fileID: 1855033542441798731}
 --- !u!1 &3168722495532692587
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,6 +368,50 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &3232578156746491321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 621588772065568539}
+  - component: {fileID: 1057956942882784}
+  m_Layer: 0
+  m_Name: Main Hand
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &621588772065568539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232578156746491321}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6653011323653295256}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1057956942882784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3232578156746491321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52a940f0706bb547be61ba40d98fc79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainHand
 --- !u!1 &3274854585025157841
 GameObject:
   m_ObjectHideFlags: 0
@@ -398,6 +445,7 @@ Transform:
   - {fileID: 4699590472996920510}
   - {fileID: 1472993279400991288}
   - {fileID: 8783425467013166544}
+  - {fileID: 621588772065568539}
   m_Father: {fileID: 7265933951121955283}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3283865634527628578
@@ -460,6 +508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskInteract
   debugMessage: 
+  DelayBeforeExecution: 0
   myAbility: {fileID: 0}
   raycastOrigin: {fileID: 0}
   raycastLayerMask:
@@ -493,7 +542,7 @@ Transform:
   m_GameObject: {fileID: 3552159772589896598}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.744, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -606,6 +655,7 @@ GameObject:
   - component: {fileID: 7265933951121955283}
   - component: {fileID: 4337051164853943440}
   - component: {fileID: 1120300079113000799}
+  - component: {fileID: 8319242111562462171}
   - component: {fileID: 7480162051488659445}
   - component: {fileID: 1855033542441798731}
   - component: {fileID: 5038955925817960501}
@@ -614,9 +664,10 @@ GameObject:
   - component: {fileID: 2637488775381336984}
   - component: {fileID: 6704701231804423290}
   - component: {fileID: 2064860907610603110}
+  - component: {fileID: 424959860889606544}
   m_Layer: 0
   m_Name: PlayeAbilityBased
-  m_TagString: Player
+  m_TagString: Multitag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -692,6 +743,19 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8319242111562462171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779592458743203687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b03aa6f6b831534da65c98112123bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MultiTag
+  tags: 0000000003000000
 --- !u!114 &7480162051488659445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -705,9 +769,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   Move: {fileID: 361868382425418400}
-  Jump: {fileID: 728765255636923342}
   Look: {fileID: 9159016061974335846}
   cameraAnchor: {fileID: 5890752853312993167}
+  MainHand: {fileID: 1057956942882784}
+  slot1Prefab: {fileID: 8347161728948537110, guid: 97ee9f086c183ba46b11763475edc4e2, type: 3}
 --- !u!114 &1855033542441798731
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -817,6 +882,20 @@ MonoBehaviour:
   currentHealth: 25
   maxHealth: 25
   healthMeter: {fileID: 6138314154169313163}
+--- !u!114 &424959860889606544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779592458743203687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fd12c505b94c5445ad78bbcd01e0676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerStats
+  stats: {fileID: 11400000, guid: 6e255b14e15846a41abaf197b8c8383e, type: 2}
+  debugMode: 0
 --- !u!1 &4282715643849378537
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +1023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TaskPlayerLook
   debugMessage: 
+  DelayBeforeExecution: 0
   myAbility: {fileID: 0}
   lookSensitivity: 10
 --- !u!1 &4629873691041506996
@@ -1139,7 +1219,7 @@ Transform:
   m_GameObject: {fileID: 7304205203579897601}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.743, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1372,6 +1452,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Tasks.TaskMovementRigidbody
   debugMessage: 
+  DelayBeforeExecution: 0
   myAbility: {fileID: 0}
   MoveSpeed: 8
   Accelleration: 10
@@ -1399,6 +1480,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 810565638244088144, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+      propertyPath: selectionLabel
+      value: 
+      objectReference: {fileID: 814988771084253629}
     - target: {fileID: 3783963265035896301, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
       propertyPath: m_Pivot.x
       value: 0

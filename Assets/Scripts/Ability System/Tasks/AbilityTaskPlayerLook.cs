@@ -21,7 +21,7 @@ public class AbilityTaskPlayerLook : AbilityTask
         Cursor.lockState = CursorLockMode.Locked;
     }
     
-    public override void Execute()
+    protected override void Execute()
     {
         base.Execute();
         if (camAnchor == null)

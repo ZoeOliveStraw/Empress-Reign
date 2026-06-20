@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 988ef97748a2f1049920177e988068f1, type: 3}
   m_Name: demo_stats
   m_EditorClassIdentifier: Assembly-CSharp::SO_PlayerStats
-  baseMoveSpeed: 5
-  baseAccelleration: 5
-  baseLookSensitivity: 20
-  baseJumpForce: 5
+  baseMoveSpeed: 3.5
+  baseAccelleration: 8
+  baseLookSensitivity: 10
+  baseJumpForce: 400
   baseAttackDamage: 1
   vitality: 0
   stamina: 0

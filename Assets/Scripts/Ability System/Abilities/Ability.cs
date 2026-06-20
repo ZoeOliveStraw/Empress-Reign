@@ -21,7 +21,7 @@ namespace Ability_System
         private List<AbilityTask> tasks;
         public AbilityParams myParams;
 
-        private void Start()
+        protected virtual void Start()
         {
             GetTasks();
         }
@@ -45,7 +45,7 @@ namespace Ability_System
             }
             foreach (AbilityTask task in tasks)
             {
-                task.Execute();
+                task.StartExecution();
             }
         }
     }

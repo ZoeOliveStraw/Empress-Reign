@@ -7,7 +7,7 @@ public class AbilityTaskAddForceRigidbody : AbilityTask
 
     private Rigidbody rb;
 
-    public override void Execute()
+    protected override void Execute()
     {
         base.Execute();
         if (rb == null)

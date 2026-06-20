@@ -15,7 +15,7 @@ namespace Player
         public override void TakeDamage(int damage, DamageType damageType = DamageType.Normal)
         {
             base.TakeDamage(damage, damageType);
-            healthMeter.Set(currentHealth, maxHealth);
+            healthMeter.Initialize(currentHealth, 0, maxHealth);
         }
     }
 }

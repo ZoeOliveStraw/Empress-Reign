@@ -14678,6 +14678,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayeAbilityBased
       objectReference: {fileID: 0}
+    - target: {fileID: 4228367705991539285, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.742
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605666927909307608, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605666927909307608, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605666927909307608, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 6605666927909307608, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6769197957520476014, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
       propertyPath: JumpForce
       value: 250
@@ -14730,6 +14750,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7685903259744083056, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7685903259744083056, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.458
+      objectReference: {fileID: 0}
+    - target: {fileID: 7685903259744083056, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.812
+      objectReference: {fileID: 0}
     - target: {fileID: 7842671767988839108, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
       propertyPath: m_TagString
       value: MainCamera
@@ -14737,7 +14769,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8609963200189489358, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
     - {fileID: 1220813723995269574, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 333528811094246964, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
@@ -19596,6 +19629,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1576388339}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!1 &1134098302 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3779592458743203687, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
+  m_PrefabInstance: {fileID: 798094466}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1153446431
 GameObject:
   m_ObjectHideFlags: 0
@@ -29572,7 +29610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a493fef62d8e42efab2ecde0d4da0d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Managers.PlayerManager
-  PlayerGO: {fileID: 0}
+  PlayerGO: {fileID: 1134098302}
   playerPrefab: {fileID: 3779592458743203687, guid: e2d0052ba6e3982418874640f8864cf3, type: 3}
 --- !u!4 &1602056325
 Transform:
@@ -36582,6 +36620,10 @@ PrefabInstance:
     - target: {fileID: 7600570874246465127, guid: b5e90a5395eb95849893b659e53419b2, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600570874246465127, guid: b5e90a5395eb95849893b659e53419b2, type: 3}
+      propertyPath: m_TagString
+      value: Multitag
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

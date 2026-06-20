@@ -11,8 +11,7 @@ GameObject:
   - component: {fileID: 7655029275325522701}
   - component: {fileID: 3694455250239019738}
   - component: {fileID: 6206331103144879747}
-  - component: {fileID: 6958000161595329161}
-  - component: {fileID: 8409685147464694300}
+  - component: {fileID: 6673293826131624830}
   m_Layer: 0
   m_Name: Attack
   m_TagString: Untagged
@@ -32,7 +31,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1794049116888505816}
   m_Father: {fileID: 4729576953718427300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3694455250239019738
@@ -62,9 +62,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskCooldown
   debugMessage: 
+  DelayBeforeExecution: 0
   myAbility: {fileID: 0}
   cooldown: 1
---- !u!114 &6958000161595329161
+--- !u!114 &6673293826131624830
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,29 +74,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 616125636849629945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b62849133d965540af4fd719d6d5a71, type: 3}
+  m_Script: {fileID: 11500000, guid: 63be6f94acc357745bd0448f7fe4bb2f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskDistanceToTarget
+  m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskDamageChecksphere
   debugMessage: 
-  myAbility: {fileID: 0}
-  distanceToTarget: 1
-  minimum: 0
---- !u!114 &8409685147464694300
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616125636849629945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee1486393a6bbfe4996032348781a61a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskDamageTarget
-  debugMessage: Attacking!
+  DelayBeforeExecution: 0.5
   myAbility: {fileID: 0}
   damage: 5
-  damageType: 0
+  checkSphereRadius: 0.5
+  checkSphereOriginTransform: {fileID: 1794049116888505816}
 --- !u!1 &1242438293689495981
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +205,37 @@ Transform:
   - {fileID: 1343706767330141263}
   m_Father: {fileID: 6221471654319910100}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1745031336994761136
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1794049116888505816}
+  m_Layer: 0
+  m_Name: Checksphere origin
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1794049116888505816
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745031336994761136}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.175, z: 0.758}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7655029275325522701}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2849287155703883985
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +247,6 @@ GameObject:
   - component: {fileID: 4399043772234941931}
   - component: {fileID: 76963840044845159}
   - component: {fileID: 3738439185915366187}
-  - component: {fileID: 6955942175363251083}
   - component: {fileID: 6279285263854445297}
   m_Layer: 0
   m_Name: Enemy Move
@@ -280,25 +297,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Tasks.AbilityTaskMoveNavmesh
   debugMessage: 
+  DelayBeforeExecution: 0
   myAbility: {fileID: 0}
   navMeshAgent: {fileID: 0}
   moveSpeed: 3
---- !u!114 &6955942175363251083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2849287155703883985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b62849133d965540af4fd719d6d5a71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskDistanceToTarget
-  debugMessage: 
-  myAbility: {fileID: 0}
-  distanceToTarget: 10
-  minimum: 0
 --- !u!114 &6279285263854445297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskCooldown
   debugMessage: 
+  DelayBeforeExecution: 0
   myAbility: {fileID: 0}
   cooldown: 0.25
 --- !u!1 &4501411599228491834
@@ -356,6 +359,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6221471654319910100}
+  - component: {fileID: 5354958264193090834}
   - component: {fileID: 258694188498528725}
   - component: {fileID: 327702955400650899}
   - component: {fileID: 3723229620786114876}
@@ -363,7 +367,7 @@ GameObject:
   - component: {fileID: 8122980796652080911}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Multitag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -385,6 +389,19 @@ Transform:
   - {fileID: 4729576953718427300}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5354958264193090834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7600570874246465127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b03aa6f6b831534da65c98112123bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MultiTag
+  tags: 0100000003000000
 --- !u!114 &258694188498528725
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,7 +417,8 @@ MonoBehaviour:
   abilityManager: {fileID: 327702955400650899}
   move: {fileID: 76963840044845159}
   attack: {fileID: 3694455250239019738}
-  Player: {fileID: 0}
+  chaseRange: 15
+  attackRange: 2
 --- !u!114 &327702955400650899
 MonoBehaviour:
   m_ObjectHideFlags: 0

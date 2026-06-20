@@ -1,10 +1,11 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Player
 {
     public class PlayerStats : MonoBehaviour
     {
-        [SerializeField] private SO_PlayerStats debugPlayerStats;
+        [SerializeField] public SO_PlayerStats stats;
         [SerializeField] private bool debugMode;
 
         public float MoveSpeed => GetMoveSpeed();
@@ -14,28 +15,28 @@ namespace Player
         
         private float GetMoveSpeed()
         {
-            if(debugMode) return debugPlayerStats.GetMoveSpeed();
+            if(debugMode) return stats.GetMoveSpeed();
             //TODO PROPER STAT CALCULATION
             return 1;
         }
         
         private float GetAcceleration()
         {
-            if(debugMode) return debugPlayerStats.baseAccelleration;
+            if(debugMode) return stats.baseAccelleration;
             //TODO PROPER STAT CALCULATION
             return 1;
         }
 
         private float GetJumpForce()
         {
-            if (debugMode) return debugPlayerStats.baseJumpForce;
+            if (debugMode) return stats.baseJumpForce;
             //TODO PROPER STAT CALCULATION
             return 1;
         }
 
         private float GetLookSpeed()
         {
-            if (debugMode) return debugPlayerStats.baseLookSensitivity;
+            if (debugMode) return stats.baseLookSensitivity;
             //TODO PROPER STAT CALCULATION
             return 1;
         }
