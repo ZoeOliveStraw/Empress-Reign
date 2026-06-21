@@ -9,7 +9,6 @@ namespace Player
     public class PlayerEquipment : MonoBehaviour
     {
         [SerializeField] public EquipmentSlots equipmentSlots;
-        [SerializeField] private PlayerHands playerHands;
 
         private void Start()
         {
@@ -26,7 +25,6 @@ namespace Player
         public void EquipRightHand(SO_InventoryWeapon weapon)
         {
             equipmentSlots.RightHand = weapon;
-            playerHands.EquipRightHandObject(weapon);
         }
 
         public void EquipLeftHand(SO_InventoryItem item)

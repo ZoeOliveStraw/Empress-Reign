@@ -28,9 +28,11 @@ namespace Ability_System
 
         private void GetTasks()
         {
-            tasks = GetComponents<AbilityTask>().ToList();
+            tasks = GetComponents<AbilityTask>().OrderBy(t => t.ExecutionPriority).ToList();
             foreach (AbilityTask task in tasks)
-                task.myAbility = this;
+            {
+                task.myAbility = this;   
+            }
         }
 
         public void Use(AbilityParams abilityParams = default)

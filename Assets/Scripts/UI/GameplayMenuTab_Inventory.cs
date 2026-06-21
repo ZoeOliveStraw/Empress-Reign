@@ -14,7 +14,7 @@ namespace UI
         [SerializeField] private Transform inventoryDisplayContent;
 
         private List<UI_InventoryItem> inventoryItemIcons;
-        private PlayerInventory inventory;
+        //private PlayerInventory inventory;
 
         public void Start()
         {
@@ -23,7 +23,7 @@ namespace UI
 
         private void InitializeInventory()
         {
-            if (inventory == null)
+            /*if (inventory == null)
             {
                 inventory = SceneLoader.Instance.GetPlayer().GetComponent<PlayerInventory>();
             }
@@ -36,7 +36,7 @@ namespace UI
             if (inventory != null)
             {
                 RenderInventory();
-            }
+            }*/
         }
 
         public void OnEnable()
@@ -61,10 +61,10 @@ namespace UI
 
         private void PopulateInventory()
         {
-            for (int i = 0; i < inventory._inventoryItems.Count; i++)
+            /*for (int i = 0; i < inventory._inventoryItems.Count; i++)
             {
                 AddItemIcon(inventory._inventoryItems[i], i);
-            }
+            }*/
         }
 
         private void AddItemIcon(InventoryStack stack, int index)

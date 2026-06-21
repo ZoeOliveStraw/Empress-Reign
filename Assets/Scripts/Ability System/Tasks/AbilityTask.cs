@@ -9,6 +9,7 @@ namespace Ability_System
     {
         [SerializeField] private string debugMessage;
         [SerializeField] private float DelayBeforeExecution = 0;
+        [SerializeField] public int ExecutionPriority = 0;
         
         private bool _onCooldown = false;
         private bool _startRequested = false;

@@ -24,11 +24,5 @@ namespace Interactables
         {
             Debug.LogWarning($"{label} SAYS PEEPEE POOPOO");
         }
-
-        public Transform GetPlayerReference()
-        {
-            if(SceneLoader.Instance != null) return SceneLoader.Instance.GetPlayer().transform;
-            return GameObject.FindGameObjectWithTag("PlayerController").transform;
-        }
     }
 }

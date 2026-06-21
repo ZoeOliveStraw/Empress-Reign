@@ -3,7 +3,9 @@ using UnityEngine;
 
 public class AbilityTaskAddForceRigidbody : AbilityTask
 {
+    [SerializeField] private Vector3 direction;
     [SerializeField] private float JumpForce;
+    [SerializeField] private bool UseParamValues = false;
 
     private Rigidbody rb;
 
@@ -14,6 +16,7 @@ public class AbilityTaskAddForceRigidbody : AbilityTask
         {
             rb = myAbility.myParams.AffectedGameObject.GetComponent<Rigidbody>();
         }
-        rb.AddForce(Vector3.up * JumpForce);
+        Vector3 force = UseParamValues ? myAbility.myParams.Direction : direction * JumpForce;
+        rb.AddForce(force);
     }
 }

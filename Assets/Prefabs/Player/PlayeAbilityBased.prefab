@@ -144,7 +144,6 @@ GameObject:
   - component: {fileID: 4699590472996920510}
   - component: {fileID: 728765255636923342}
   - component: {fileID: 6769197957520476014}
-  - component: {fileID: 8609963200189489358}
   - component: {fileID: 7092193679832571735}
   m_Layer: 0
   m_Name: Jump
@@ -196,24 +195,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TaskAddForceRigidbody
   debugMessage: 
   DelayBeforeExecution: 0
+  ExecutionPriority: 0
   myAbility: {fileID: 0}
+  direction: {x: 0, y: 0, z: 0}
   JumpForce: 400
---- !u!114 &8609963200189489358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2780194123262008943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ceafe2ee92da3f4094af037fcb79dd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskCooldown
-  debugMessage: 
-  DelayBeforeExecution: 0
-  myAbility: {fileID: 0}
-  cooldown: 2
+  UseParamValues: 0
 --- !u!114 &7092193679832571735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskMustBeGrounded
   debugMessage: 
   DelayBeforeExecution: 0
+  ExecutionPriority: 0
   myAbility: {fileID: 0}
   playerGroundCheck: {fileID: 1855033542441798731}
 --- !u!1 &3168722495532692587
@@ -507,14 +494,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74090e1f80d5baa449d4d5f07a3cfd7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskInteract
-  debugMessage: 
+  debugMessage: Interacting
   DelayBeforeExecution: 0
+  ExecutionPriority: 0
   myAbility: {fileID: 0}
-  raycastOrigin: {fileID: 0}
+  raycastOrigin: {fileID: 7265933951121955283}
   raycastLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  interactionRange: 0
+  interactionRange: 1
 --- !u!1 &3552159772589896598
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,11 +648,11 @@ GameObject:
   - component: {fileID: 1855033542441798731}
   - component: {fileID: 5038955925817960501}
   - component: {fileID: 3237052208598648686}
-  - component: {fileID: 1529692920395861927}
-  - component: {fileID: 2637488775381336984}
   - component: {fileID: 6704701231804423290}
   - component: {fileID: 2064860907610603110}
   - component: {fileID: 424959860889606544}
+  - component: {fileID: 2423146071562152732}
+  - component: {fileID: 2246856756347419574}
   m_Layer: 0
   m_Name: PlayeAbilityBased
   m_TagString: Multitag
@@ -772,6 +760,7 @@ MonoBehaviour:
   Look: {fileID: 9159016061974335846}
   cameraAnchor: {fileID: 5890752853312993167}
   MainHand: {fileID: 1057956942882784}
+  interaction: {fileID: 2423146071562152732}
   slot1Prefab: {fileID: 8347161728948537110, guid: 97ee9f086c183ba46b11763475edc4e2, type: 3}
 --- !u!114 &1855033542441798731
 MonoBehaviour:
@@ -821,39 +810,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ability_System.AbilityManager
   abilityContainer: {fileID: 6653011323653295256}
---- !u!114 &1529692920395861927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3779592458743203687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8b5c0b815fa2904d84aac9a81a8e24b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerLook
-  lookSensitivity: 25
-  cam: {fileID: 7122247723154876363}
-  camAnchor: {fileID: 5890752853312993167}
-  ascending: 1
---- !u!114 &2637488775381336984
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3779592458743203687}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 161275e2c7f30ff4cb6be37a4cc6da1f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerInteraction
-  interactionDistance: 0.5
-  raycastOrigin: {fileID: 5890752853312993167}
-  interactableTag: Interactable
-  objectLabel: {fileID: 814988771084253629}
-  _input: {fileID: 5038955925817960501}
 --- !u!114 &6704701231804423290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -896,6 +852,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerStats
   stats: {fileID: 11400000, guid: 6e255b14e15846a41abaf197b8c8383e, type: 2}
   debugMode: 0
+--- !u!114 &2423146071562152732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779592458743203687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 161275e2c7f30ff4cb6be37a4cc6da1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerInteraction
+  interactionDistance: 1
+  raycastOrigin: {fileID: 7122247723154876363}
+  interactableTag: 
+  objectLabel: {fileID: 814988771084253629}
+  _input: {fileID: 5038955925817960501}
+  _currentInteractable: {fileID: 0}
+--- !u!114 &2246856756347419574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779592458743203687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c63794b5dd373948a02c9cc0ccbe8fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  maxSlots: 10
 --- !u!1 &4282715643849378537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,6 +1011,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TaskPlayerLook
   debugMessage: 
   DelayBeforeExecution: 0
+  ExecutionPriority: 0
   myAbility: {fileID: 0}
   lookSensitivity: 10
 --- !u!1 &4629873691041506996
@@ -1453,6 +1441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Tasks.TaskMovementRigidbody
   debugMessage: 
   DelayBeforeExecution: 0
+  ExecutionPriority: 0
   myAbility: {fileID: 0}
   MoveSpeed: 8
   Accelleration: 10
