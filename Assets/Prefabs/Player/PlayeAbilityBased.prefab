@@ -653,6 +653,7 @@ GameObject:
   - component: {fileID: 424959860889606544}
   - component: {fileID: 2423146071562152732}
   - component: {fileID: 2246856756347419574}
+  - component: {fileID: 4815055822975589077}
   m_Layer: 0
   m_Name: PlayeAbilityBased
   m_TagString: Multitag
@@ -677,6 +678,7 @@ Transform:
   - {fileID: 3642528783670512667}
   - {fileID: 7691873609019887397}
   - {fileID: 6653011323653295256}
+  - {fileID: 828769531673687508}
   - {fileID: 7186713000403148310}
   - {fileID: 9127275815187057399}
   m_Father: {fileID: 0}
@@ -883,6 +885,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Inventory
   maxSlots: 10
+--- !u!114 &4815055822975589077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3779592458743203687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7eda44e0b21ab54380c5044e1a96800, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterAttributes
+  AttributeContainer: {fileID: 0}
 --- !u!1 &4282715643849378537
 GameObject:
   m_ObjectHideFlags: 0
@@ -914,6 +929,94 @@ Transform:
   m_Children: []
   m_Father: {fileID: 7691873609019887397}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4351436256887025815
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 828769531673687508}
+  - component: {fileID: 8203737891965194643}
+  - component: {fileID: 6393560204489681006}
+  - component: {fileID: 6821687031718641975}
+  m_Layer: 0
+  m_Name: Attributes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &828769531673687508
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351436256887025815}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7265933951121955283}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8203737891965194643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351436256887025815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99ff8868f8aa734b840690f1ae042a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Attribute_System.Attribute
+  currentValue: 0
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  attributeType: 0
+  baseValue: 5
+--- !u!114 &6393560204489681006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351436256887025815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99ff8868f8aa734b840690f1ae042a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Attribute_System.Attribute
+  currentValue: 0
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  attributeType: 1
+  baseValue: 5
+--- !u!114 &6821687031718641975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351436256887025815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a99ff8868f8aa734b840690f1ae042a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Attribute_System.Attribute
+  currentValue: 0
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  attributeType: 2
+  baseValue: 5
 --- !u!1 &4519923381493886454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,7 +1546,7 @@ MonoBehaviour:
   DelayBeforeExecution: 0
   ExecutionPriority: 0
   myAbility: {fileID: 0}
-  MoveSpeed: 8
+  MoveSpeedMultiplier: 0
   Accelleration: 10
 --- !u!1001 &6286747930604968955
 PrefabInstance:
