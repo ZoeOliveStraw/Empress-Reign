@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9a71d7df-6d40-4c7e-bb8d-b75c5020970e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskMoveRigidbody_Attribute.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Attribute System/AttributeModifier.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Attribute System/AttributeModifier.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Empress-Reign/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Empress-Reign/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayeAbilityBased.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayeAbilityBased.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskMovementRigidbody.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskMovementRigidbody.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskMoveRigidbody_Attribute.cs.meta" afterDir="false" />
-    </list>
+    <list default="true" id="9a71d7df-6d40-4c7e-bb8d-b75c5020970e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,7 +14,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskMoveRigidbody_Attribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskMoveRigidbody_Attribute.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -99,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1781625539775</updated>
       <workItem from="1781625542383" duration="726000" />
-      <workItem from="1782075383955" duration="2990000" />
+      <workItem from="1782075383955" duration="3150000" />
     </task>
     <servers />
   </component>
