@@ -1,3 +1,4 @@
+using System;
 using Attribute_System;
 using UnityEngine;
 using Attribute = Attribute_System.Attribute;
@@ -11,7 +12,6 @@ namespace Ability_System.Tasks
 
         private Transform _characterToMove;
         private Vector2 _currentMoveVector = Vector2.zero;
-        private float _moveSpeed;
         private Attribute _speedAttribute;
 
         private void Start()
@@ -20,15 +20,14 @@ namespace Ability_System.Tasks
             CalculateMoveSpeed();   
         }
 
-        private void CalculateMoveSpeed()
+        private float CalculateMoveSpeed()
         {
             if(_speedAttribute == null) 
             {
                 _speedAttribute = 
                 myAbility.abilityOwner.GetComponent<CharacterAttributes>().GetAttribute(Attributes.Speed);
-                _speedAttribute.OnValueChanged.AddListener(CalculateMoveSpeed);
             }
-            _moveSpeed = _speedAttribute.currentValue * MoveSpeedMultiplier;
+            return _speedAttribute.currentValue * MoveSpeedMultiplier;
         }
 
         protected override void Execute()
@@ -43,7 +42,7 @@ namespace Ability_System.Tasks
 
         public void Move(Vector2 moveVector)
         {
-            Vector2 targetMoveVector = moveVector * _moveSpeed;
+            Vector2 targetMoveVector = moveVector * CalculateMoveSpeed();
             _currentMoveVector = Vector2.Lerp(_currentMoveVector, targetMoveVector, Accelleration * Time.deltaTime);
             Vector3 forward = transform.forward;
             Vector3 right = transform.right;

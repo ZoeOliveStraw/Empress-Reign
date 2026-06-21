@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -20,6 +22,12 @@ namespace Attribute_System
         [SerializeField] public Attributes attributeType;
         [SerializeField] private float baseValue;
         private List<AttributeModifier> modifiers;
+
+        public void Initialize()
+        {
+            modifiers = new List<AttributeModifier>();
+            CalculateCurrentValue();
+        }
 
         public AttributeModifier AddModifier(float value, ModifierType type)
         {
@@ -52,7 +60,9 @@ namespace Attribute_System
             {
                  value *= modifier.Value;
             }
+            Debug.LogWarning($"Calculated {attributeType} value: {value}");
             currentValue = value;
+            OnValueChanged?.Invoke();
         }
     }
 }

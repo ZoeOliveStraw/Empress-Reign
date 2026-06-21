@@ -19,7 +19,9 @@ namespace Attribute_System
             var attributes = AttributeContainer.GetComponents<Attribute>();
             foreach (var attribute in attributes)
             {
+                Debug.LogWarning($"Adding attribute {attribute.attributeType}");
                 _attributes.Add(attribute.attributeType, attribute);
+                attribute.Initialize();
             }
         }
 
@@ -30,7 +32,16 @@ namespace Attribute_System
 
         public Attribute GetAttribute(Attributes attribute)
         {
-            return _attributes[attribute];
+            if (!_attributes.TryGetValue(attribute, out var result))
+            {
+                Debug.LogError(
+                    $"Attribute {attribute} not found. " +
+                    $"Dictionary contains: {string.Join(", ", _attributes.Keys)}"
+                );
+                return null;
+            }
+
+            return result;
         }
     }
 }

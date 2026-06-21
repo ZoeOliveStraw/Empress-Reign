@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class AbilityTaskMustBeGrounded : AbilityTask
 {
-    [SerializeField] private PlayerGroundCheck playerGroundCheck;
+    [SerializeField] private GroundCheck groundCheck;
 
     public override bool CanExecuteTask()
     {
-        if (playerGroundCheck == null)
+        if (groundCheck == null)
         {
-            playerGroundCheck = PlayerManager.Instance.PlayerGO.GetComponent<PlayerGroundCheck>();
+            groundCheck = PlayerManager.Instance.PlayerGO.GetComponent<GroundCheck>();
         }
-        return playerGroundCheck.CanJump;
+        return groundCheck.CanJump;
     }
 }

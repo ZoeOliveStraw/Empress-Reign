@@ -11,7 +11,7 @@ namespace Player
         [SerializeField] private float jumpForce;
         [SerializeField] private Rigidbody rb;
 
-        private PlayerGroundCheck groundCheck;
+        private GroundCheck groundCheck;
         private Vector2 _currentMoveVector = Vector2.zero;
         private float _yaw;
         private PlayerInputHandler input;
@@ -37,7 +37,7 @@ namespace Player
 
         public void Jump()
         {
-            if(groundCheck == null ) groundCheck = GetComponent<PlayerGroundCheck>();
+            if(groundCheck == null ) groundCheck = GetComponent<GroundCheck>();
             if (!groundCheck.CanJump) return;
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }

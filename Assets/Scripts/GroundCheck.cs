@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGroundCheck : MonoBehaviour
+public class GroundCheck : MonoBehaviour
 {
     [Header("Ground Check Points")]
     [SerializeField] private List<Transform> groundCheckPoints;

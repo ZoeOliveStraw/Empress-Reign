@@ -4,7 +4,7 @@ namespace Player.Player_State_Machine
 {
     public abstract class PlayerStateAbstract
     {
-        protected PlayerGroundCheck playerGroundCheck;
+        protected GroundCheck GroundCheck;
         protected PlayerStats stats;
         protected PlayerMove playerMove;
         protected PlayerLook playerLook;
@@ -26,7 +26,7 @@ namespace Player.Player_State_Machine
         {
             if(playerMove == null) playerMove = PlayerRootGO.GetComponent<PlayerMove>();
             if(playerLook == null) playerLook = PlayerRootGO.GetComponent<PlayerLook>();
-            if(playerGroundCheck == null) playerGroundCheck = PlayerRootGO.GetComponent<PlayerGroundCheck>();
+            if(GroundCheck == null) GroundCheck = PlayerRootGO.GetComponent<GroundCheck>();
         }
 
         public abstract void Enter();

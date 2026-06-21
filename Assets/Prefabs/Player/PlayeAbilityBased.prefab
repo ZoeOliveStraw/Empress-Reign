@@ -216,7 +216,7 @@ MonoBehaviour:
   DelayBeforeExecution: 0
   ExecutionPriority: 0
   myAbility: {fileID: 0}
-  playerGroundCheck: {fileID: 1855033542441798731}
+  groundCheck: {fileID: 0}
 --- !u!1 &3168722495532692587
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7eda44e0b21ab54380c5044e1a96800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterAttributes
-  AttributeContainer: {fileID: 0}
+  AttributeContainer: {fileID: 828769531673687508}
 --- !u!1 &4282715643849378537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,7 +1546,7 @@ MonoBehaviour:
   DelayBeforeExecution: 0
   ExecutionPriority: 0
   myAbility: {fileID: 0}
-  MoveSpeedMultiplier: 0
+  MoveSpeedMultiplier: 1
   Accelleration: 10
 --- !u!1001 &6286747930604968955
 PrefabInstance:
