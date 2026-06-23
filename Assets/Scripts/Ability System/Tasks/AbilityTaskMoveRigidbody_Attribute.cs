@@ -37,7 +37,7 @@ namespace Ability_System.Tasks
             {
                 _characterToMove = myAbility.abilityOwner.transform;
             }
-            Move(myAbility.myParams.InputAxis);
+            Move(myAbility.myParams.Axis2D);
         }
 
         public void Move(Vector2 moveVector)

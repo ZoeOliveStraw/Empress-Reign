@@ -1,11 +1,13 @@
 using System.Linq;
 using Ability_System;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField] private Actor myActor;
         [SerializeField] private Ability Move;
         [SerializeField] private Ability Look;
         [SerializeField] public Transform cameraAnchor;
@@ -36,8 +38,14 @@ namespace Player
         // Update is called once per frame
         void Update()
         {
-            Move.Use(new AbilityParams(inputAxis: input.Move));
-            Look.Use(new AbilityParams(inputAxis: input.Look));
+            Move.Use(new AbilityParams(axis2D: input.Move));
+            Look.Use(new AbilityParams(axis2D: input.Look));
+        }
+
+        private Actor MyActor()
+        {
+            if(myActor == null) myActor = GetComponent<Actor>();
+            return myActor;
         }
 
         private void Interact()
@@ -45,7 +53,7 @@ namespace Player
             if (interaction._currentInteractable == null) return;
             
             abilityManager.UseAbility("Interact",
-                new AbilityParams(affectedGameObject: gameObject,
+                new AbilityParams(myActor: MyActor(),
                     interactable: interaction._currentInteractable));
         }
     }

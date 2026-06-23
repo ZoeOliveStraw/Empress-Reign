@@ -8,8 +8,6 @@ namespace Ability_System.Tasks
     {
         [SerializeField] private NavMeshAgent navMeshAgent;
         [SerializeField] private float moveSpeed;
-
-        
         
         private void GetNavMeshAgent()
         {
@@ -20,7 +18,7 @@ namespace Ability_System.Tasks
         {
             base.Execute();
             if(navMeshAgent == null) GetNavMeshAgent();
-            navMeshAgent.SetDestination(myAbility.myParams.TargetGameObject.transform.position);
+            navMeshAgent.SetDestination(myAbility.myParams.TargetActor.transform.position);
         }
     }
 }

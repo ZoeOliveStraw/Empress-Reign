@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Ability_System
 {
-    public class InteractableAbilityBased : MonoBehaviour
+    public class InteractableAbilityBased : MonoBehaviour, IAbilityParams
     {
         [SerializeField] public string actorName;
         [SerializeField] private List<Ability> onStartAbilities = new List<Ability>();
@@ -29,9 +29,14 @@ namespace Ability_System
         {
             foreach (Ability ability in onActivateAbilities)
             {
-                ability.Use(new AbilityParams(
-                    affectedGameObject: affectedGameObject));
+                ability.Use(GetAbilityParams());
             }
+        }
+
+        public AbilityParams GetAbilityParams()
+        {
+            return new AbilityParams(
+                myActor: GetComponent<Actor>());
         }
     }
 }

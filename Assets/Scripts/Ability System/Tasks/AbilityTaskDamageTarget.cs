@@ -9,6 +9,6 @@ public class AbilityTaskDamageTarget : AbilityTask
     protected override void Execute()
     {
         base.Execute();
-        myAbility.myParams.TargetGameObject.GetComponent<Health>().TakeDamage(damage);
+        myAbility.myParams.TargetActor.GetComponent<Health>().TakeDamage(damage);
     }
 }

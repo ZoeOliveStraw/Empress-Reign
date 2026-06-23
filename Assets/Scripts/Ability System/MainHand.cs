@@ -10,7 +10,13 @@ namespace Ability_System
 
         public void UseMainHandAbility()
         {
-            if(mainHandAbility != null) mainHandAbility.Use(new AbilityParams(gameObject));
+            if(mainHandAbility != null) mainHandAbility.Use(new AbilityParams(GetMyCharacter()));
+        }
+
+        private Actor GetMyCharacter()
+        {
+            if (myOwner == null) return null;
+            return myOwner.GetComponent<Actor>();
         }
 
         public void EquipMainHandAbility(GameObject abilityGO)

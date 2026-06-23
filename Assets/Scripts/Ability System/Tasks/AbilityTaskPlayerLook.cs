@@ -32,7 +32,7 @@ public class AbilityTaskPlayerLook : AbilityTask
         {
             playerBody = myAbility.abilityOwner.transform;
         }
-        Look(myAbility.myParams.InputAxis);
+        Look(myAbility.myParams.Axis2D);
     }
 
     public void Look(Vector2 lookVector)

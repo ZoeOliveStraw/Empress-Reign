@@ -63,6 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskCooldown
   debugMessage: 
   DelayBeforeExecution: 0
+  ExecutionPriority: 0
   myAbility: {fileID: 0}
   cooldown: 1
 --- !u!114 &6673293826131624830
@@ -79,6 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskDamageChecksphere
   debugMessage: 
   DelayBeforeExecution: 0.5
+  ExecutionPriority: 0
   myAbility: {fileID: 0}
   damage: 5
   checkSphereRadius: 0.5
@@ -249,7 +251,7 @@ GameObject:
   - component: {fileID: 3738439185915366187}
   - component: {fileID: 6279285263854445297}
   m_Layer: 0
-  m_Name: Enemy Move
+  m_Name: Move Navmesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Tasks.AbilityTaskMoveNavmesh
   debugMessage: 
   DelayBeforeExecution: 0
+  ExecutionPriority: 0
   myAbility: {fileID: 0}
   navMeshAgent: {fileID: 0}
   moveSpeed: 3
@@ -315,6 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskCooldown
   debugMessage: 
   DelayBeforeExecution: 0
+  ExecutionPriority: 0
   myAbility: {fileID: 0}
   cooldown: 0.25
 --- !u!1 &4501411599228491834
@@ -366,7 +370,7 @@ GameObject:
   - component: {fileID: 8188304228594077968}
   - component: {fileID: 8122980796652080911}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy_OLD
   m_TagString: Multitag
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

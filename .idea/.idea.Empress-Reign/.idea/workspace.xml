@@ -5,13 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a71d7df-6d40-4c7e-bb8d-b75c5020970e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Attribute System/AttributeEnum.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Attribute System/AttributeEnum.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/IAbilityParams.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/IAbilityParams.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Empress-Reign/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Empress-Reign/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayeAbilityBased.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayeAbilityBased.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Enemy.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/NPCs/Enemy.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Hand Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Hand Prefabs/Ability_IronSword.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Hand Prefabs/Ability_IronSword.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Hand Prefabs/HandObject_Abstract.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Hand Prefabs/HandObject_Abstract.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Hand Prefabs/HandObject_IronSword.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Hand Prefabs/HandObject_IronSword.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Hand Prefabs/MainHandAbility.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Hand Prefabs/MainHandAbility.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayeAbilityBased.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/PlayeAbilityBased.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability System/AbilityParams.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/AbilityParams.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability System/InteractableAbilityBased.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/InteractableAbilityBased.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability System/MainHand.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/MainHand.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskAddForceRigidbody.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskAddForceRigidbody.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskAddItem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskAddItem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskDamageTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskDamageTarget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskDistanceToTarget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskDistanceToTarget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskMoveNavmesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskMoveNavmesh.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskMoveRigidbody_Attribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskMoveRigidbody_Attribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attribute System/Attribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attribute System/Attribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attribute System/CharacterAttributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attribute System/CharacterAttributes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskPlayerLook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskPlayerLook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,6 +125,7 @@
       <workItem from="1781625542383" duration="726000" />
       <workItem from="1782075383955" duration="3150000" />
       <workItem from="1782221371225" duration="3160000" />
+      <workItem from="1782235236463" duration="4537000" />
     </task>
     <servers />
   </component>

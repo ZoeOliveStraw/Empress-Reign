@@ -14,9 +14,9 @@ public class AbilityTaskAddForceRigidbody : AbilityTask
         base.Execute();
         if (rb == null)
         {
-            rb = myAbility.myParams.AffectedGameObject.GetComponent<Rigidbody>();
+            rb = myAbility.myParams.MyActor.GetComponent<Rigidbody>();
         }
-        Vector3 force = UseParamValues ? myAbility.myParams.Direction : direction * JumpForce;
+        Vector3 force = UseParamValues ? myAbility.myParams.Axis3D : direction * JumpForce;
         rb.AddForce(force);
     }
 }
