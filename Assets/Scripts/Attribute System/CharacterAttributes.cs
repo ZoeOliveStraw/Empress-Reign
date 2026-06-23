@@ -47,16 +47,14 @@ namespace Attribute_System
 
         public Attribute GetAttribute(AttributeEnum attributeEnum)
         {
-            if (!_attributes.TryGetValue(attributeEnum, out var result))
-            {
-                Debug.LogError(
-                    $"Attribute {attributeEnum} not found. " +
-                    $"Dictionary contains: {string.Join(", ", _attributes.Keys)}"
-                );
-                return null;
-            }
+            Attribute result;
 
-            return result;
+            foreach (var attribute in _attributes)
+                if (attribute.Key == attributeEnum) return attribute.Value;
+            foreach (var composite in _compositeAttributes)
+                if (composite.Key == attributeEnum) return composite.Value;
+
+            return null;
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Ability_System.Tasks
             if(_speedAttribute == null) 
             {
                 _speedAttribute = 
-                myAbility.myActor.GetComponent<CharacterAttributes>().GetAttribute(moveSpeedAttribute);
+                myAbility.myActor.Attributes.GetAttribute(moveSpeedAttribute);
             }
             return _speedAttribute.currentValue;
         }
@@ -34,6 +34,7 @@ namespace Ability_System.Tasks
         public void Move(Vector2 moveVector)
         {
             Vector2 targetMoveVector = moveVector * CalculateMoveSpeed();
+            Debug.Log(targetMoveVector);
             _currentMoveVector = Vector2.Lerp(_currentMoveVector, targetMoveVector, Accelleration * Time.deltaTime);
             Vector3 forward = transform.forward;
             Vector3 right = transform.right;

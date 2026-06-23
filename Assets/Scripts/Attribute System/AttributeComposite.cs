@@ -14,7 +14,7 @@ namespace Attribute_System
         private List<Attribute> additive;
         private List<Attribute> multiplicative;
 
-        public void Initialize(CharacterAttributes attributes)
+        public override void Initialize(CharacterAttributes attributes)
         {
             MyCharacterAttributes = attributes;
             foreach (AttributeEnum attribute in additiveAttributes)

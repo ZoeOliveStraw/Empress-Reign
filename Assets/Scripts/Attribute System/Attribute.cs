@@ -20,7 +20,7 @@ namespace Attribute_System
 
         protected CharacterAttributes MyCharacterAttributes;
 
-        public void Initialize(CharacterAttributes characterAttributes)
+        public virtual void Initialize(CharacterAttributes characterAttributes)
         {
             modifiers = new List<AttributeModifier>();
             MyCharacterAttributes = characterAttributes;

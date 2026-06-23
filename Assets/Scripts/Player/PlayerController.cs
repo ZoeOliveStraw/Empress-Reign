@@ -31,8 +31,8 @@ namespace Player
                     new AbilityParams(myActor));
 
             input.InteractAction.performed += ctx => Interact();
-            input.Hotkey1Action.performed += ctx => MainHand.EquipMainHandAbility(slot1Prefab);
-            input.MainHandAction.performed += ctx => MainHand.UseMainHandAbility();
+            //input.Hotkey1Action.performed += ctx => MainHand.EquipMainHandAbility(slot1Prefab);
+            //input.MainHandAction.performed += ctx => MainHand.UseMainHandAbility();
         }
 
         // Update is called once per frame
@@ -40,12 +40,6 @@ namespace Player
         {
             Move.Use(new AbilityParams(axis2D: input.Move));
             Look.Use(new AbilityParams(axis2D: input.Look));
-        }
-
-        private Actor MyActor()
-        {
-            if(myActor == null) myActor = GetComponent<Actor>();
-            return myActor;
         }
 
         private void Interact()
