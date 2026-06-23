@@ -9,7 +9,10 @@ public class AbilityTaskInteract : AbilityTask
 
     protected override void Execute()
     {
-        if (myAbility.myParams.Interactable == null) return;
-        myAbility.myParams.Interactable.OnInteraction(myAbility.abilityOwner);
+        if (myAbility.myParams.TargetActor == null) return;
+        AbilityParams newParams = new AbilityParams(
+            myActor: myAbility.myParams.TargetActor,
+            targetActor: myAbility.myParams.MyActor);
+        myAbility.myParams.TargetActor.OnInteraction(newParams);
     }
 }

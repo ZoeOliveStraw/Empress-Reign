@@ -13,7 +13,7 @@ namespace Player
         [SerializeField] private TextMeshProUGUI objectLabel;
         [SerializeField] private PlayerInputHandler _input;
         
-        public InteractableAbilityBased _currentInteractable;
+        public Actor _currentActor;
 
         // Update is called once per frame
         void Update()
@@ -25,14 +25,14 @@ namespace Player
         {
             if (Physics.Raycast(raycastOrigin.position, raycastOrigin.forward, out var hit, interactionDistance))
             {
-                InteractableAbilityBased interactable = hit.collider.gameObject.GetComponent<InteractableAbilityBased>();
-                if (interactable != null)
+                Actor hitActor = hit.collider.gameObject.GetComponent<Actor>();
+                if (hitActor != null)
                 {
-                    _currentInteractable = interactable;
-                    objectLabel.text = _currentInteractable.actorName;
+                    _currentActor = hitActor;
+                    objectLabel.text = _currentActor.actorName;
                     return;
                 }
-                _currentInteractable = null;
+                _currentActor = null;
                 
             }
             objectLabel.text = "";

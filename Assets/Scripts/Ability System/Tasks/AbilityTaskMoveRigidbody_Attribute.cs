@@ -14,18 +14,12 @@ namespace Ability_System.Tasks
         private Vector2 _currentMoveVector = Vector2.zero;
         private Attribute _speedAttribute;
 
-        private void Start()
-        {
-            _characterToMove = myAbility.abilityOwner.transform;
-            CalculateMoveSpeed();   
-        }
-
         private float CalculateMoveSpeed()
         {
             if(_speedAttribute == null) 
             {
                 _speedAttribute = 
-                myAbility.abilityOwner.GetComponent<CharacterAttributes>().GetAttribute(moveSpeedAttribute);
+                myAbility.myActor.GetComponent<CharacterAttributes>().GetAttribute(moveSpeedAttribute);
             }
             return _speedAttribute.currentValue;
         }
@@ -33,10 +27,7 @@ namespace Ability_System.Tasks
         protected override void Execute()
         {
             base.Execute();
-            if (_characterToMove == null)
-            {
-                _characterToMove = myAbility.abilityOwner.transform;
-            }
+            if (_characterToMove == null) _characterToMove = myAbility.myActor.transform;
             Move(myAbility.myParams.Axis2D);
         }
 

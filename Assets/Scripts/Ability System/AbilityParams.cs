@@ -8,8 +8,6 @@ namespace Ability_System
         public Actor MyActor;
         //AN ACTOR OTHER THAN THE ABILITY OWNER THAT WILL BE AFFECTED BY THE ABILITY
         public Actor TargetActor;
-        public InteractableAbilityBased Interactable;
-        public Inventory Inventory;
         //A 3D VECTOR THAT CAN BE USED FOR ARGUMENTS
         public Vector3 Axis3D;
         //A 2d VECTOR THAT CAN BE USED FOR ARGUMENTS 
@@ -19,17 +17,13 @@ namespace Ability_System
             Actor myActor = null,
             Actor targetActor = null,
             Vector3 axis3D = default,
-            Vector2 axis2D = default,
-            InteractableAbilityBased interactable = null,
-            Inventory inventory = null)
+            Vector2 axis2D = default)
 
         {
             MyActor = myActor;
             TargetActor = targetActor;
             Axis3D = axis3D;
             Axis2D = axis2D;
-            Interactable = interactable;
-            Inventory = inventory;
         }
     }
 }

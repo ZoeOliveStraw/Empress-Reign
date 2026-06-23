@@ -6,7 +6,7 @@ public class AbilityTaskDestroySelf : AbilityTask
     protected override void Execute()
     {
         base.Execute();
-        GameObject myGO = myAbility.abilityOwner;
+        GameObject myGO = myAbility.myActor.gameObject;
         if(myGO != null) Destroy(myGO);
     }
 }

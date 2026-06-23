@@ -26,11 +26,11 @@ public class AbilityTaskPlayerLook : AbilityTask
         base.Execute();
         if (camAnchor == null)
         {
-            camAnchor = myAbility.abilityOwner.GetComponent<PlayerController>().cameraAnchor;
+            camAnchor = myAbility.myActor.GetComponent<PlayerController>().cameraAnchor;
         }
         if (playerBody == null)
         {
-            playerBody = myAbility.abilityOwner.transform;
+            playerBody = myAbility.myActor.transform;
         }
         Look(myAbility.myParams.Axis2D);
     }

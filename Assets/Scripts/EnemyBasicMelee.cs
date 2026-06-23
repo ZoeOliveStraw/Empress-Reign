@@ -10,7 +10,7 @@ public class EnemyBasicMelee : MonoBehaviour
     [SerializeField] private float chaseRange;
     [SerializeField] private float attackRange;
     
-    private GameObject player;
+    private Actor player;
     private float distanceToPlayer;
     
     private void Start()
@@ -25,7 +25,7 @@ public class EnemyBasicMelee : MonoBehaviour
 
     private void GetPlayerReference()
     {
-        player = PlayerManager.Instance.PlayerGO;
+        player = PlayerManager.Instance.PlayerGO.GetComponent<Actor>();
     }
 
     private void EnemyLogic()
@@ -34,9 +34,9 @@ public class EnemyBasicMelee : MonoBehaviour
         distanceToPlayer = DistanceToPlayer();
         if (distanceToPlayer <= attackRange)
         {
-            attack.Use(new AbilityParams(targetGameObject: player));
+            attack.Use(new AbilityParams(targetActor: player));
         }
-        else if(distanceToPlayer <= chaseRange) move.Use(new AbilityParams(targetGameObject: player));
+        else if(distanceToPlayer <= chaseRange) move.Use(new AbilityParams(targetActor: player));
     }
 
     private float DistanceToPlayer()

@@ -9,9 +9,11 @@ namespace Ability_System
     {
         [SerializeField] private Transform abilityContainer;
         private List<Ability> abilities;
+        private Actor myActor;
 
-        private void Start()
+        public void Initialize(Actor actor)
         {
+            myActor = actor;
             GetAbilities();
         }
 
@@ -20,7 +22,7 @@ namespace Ability_System
             abilities = abilityContainer.GetComponentsInChildren<Ability>().ToList();
             foreach (Ability ability in abilities)
             {
-                ability.abilityOwner = gameObject;
+                ability.Initialize(myActor);
             }
         }
 

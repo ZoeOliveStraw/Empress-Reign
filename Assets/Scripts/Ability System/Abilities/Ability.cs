@@ -17,26 +17,25 @@ namespace Ability_System
         }
 
         public string abilityName;
-        public GameObject abilityOwner;
+        public Actor myActor;
         private List<AbilityTask> tasks;
         public AbilityParams myParams;
 
-        protected virtual void Start()
+        public void Initialize(Actor actor)
         {
+            myActor = actor;
             GetTasks();
         }
 
         private void GetTasks()
         {
             tasks = GetComponents<AbilityTask>().OrderBy(t => t.ExecutionPriority).ToList();
-            foreach (AbilityTask task in tasks)
-            {
-                task.myAbility = this;   
-            }
+            foreach (AbilityTask task in tasks) task.Initialize(this);
         }
 
         public void Use(AbilityParams abilityParams = default)
         {
+            Debug.LogWarning($"{abilityName} used by {myActor.name}");
             myParams = abilityParams;
             foreach (AbilityTask task in tasks)
             {

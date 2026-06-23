@@ -9,7 +9,7 @@ public class AbilityTaskDistanceToTarget : AbilityTask
 
     public override bool CanExecuteTask()
     {
-        var distance = Vector3.Distance(myAbility.myParams.TargetActor.transform.position, myAbility.abilityOwner.transform.position);
+        var distance = Vector3.Distance(myAbility.myParams.TargetActor.transform.position, myAbility.myActor.transform.position);
         if(minimum) return distance > distanceToTarget; 
         return distance <= distanceToTarget;
     }

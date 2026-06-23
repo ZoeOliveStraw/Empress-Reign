@@ -18,6 +18,11 @@ namespace Ability_System
         private float remainingCooldown;
         [HideInInspector] public Ability myAbility;
 
+        public void Initialize(Ability ability)
+        {
+            myAbility = ability;
+        }
+
         public void StartExecution()
         {
             if (DelayBeforeExecution == 0) Execute();

@@ -28,7 +28,7 @@ namespace Player
             
             input.JumpAction.performed += ctx => 
                 abilityManager.UseAbility("Jump",
-                    new AbilityParams(gameObject));
+                    new AbilityParams(myActor));
 
             input.InteractAction.performed += ctx => Interact();
             input.Hotkey1Action.performed += ctx => MainHand.EquipMainHandAbility(slot1Prefab);
@@ -50,11 +50,11 @@ namespace Player
 
         private void Interact()
         {
-            if (interaction._currentInteractable == null) return;
+            if (interaction._currentActor == null) return;
             
             abilityManager.UseAbility("Interact",
-                new AbilityParams(myActor: MyActor(),
-                    interactable: interaction._currentInteractable));
+                new AbilityParams(myActor: interaction._currentActor,
+                    targetActor: myActor));
         }
     }
 }

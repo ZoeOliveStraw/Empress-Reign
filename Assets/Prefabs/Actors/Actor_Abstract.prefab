@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a716fdfa842754296fe6013a547a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Character
-  Abilities: {fileID: 4973841792929444079}
+  Abilities: {fileID: 0}
   Attributes: {fileID: 8182509405274196483}
   Flags: {fileID: 3435469291553644076}
 --- !u!1 &5313253278331185357
@@ -201,7 +201,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1094515251236141380}
-  - component: {fileID: 4973841792929444079}
+  - component: {fileID: 582793212484450611}
   m_Layer: 0
   m_Name: Abilities
   m_TagString: Untagged
@@ -224,7 +224,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8102863068467065161}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4973841792929444079
+--- !u!114 &582793212484450611
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

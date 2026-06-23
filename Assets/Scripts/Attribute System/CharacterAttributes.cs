@@ -10,7 +10,7 @@ namespace Attribute_System
         private Dictionary<AttributeEnum, Attribute> _attributes = new Dictionary<AttributeEnum, Attribute>();
         private Dictionary<AttributeEnum, Attribute> _compositeAttributes = new Dictionary<AttributeEnum, Attribute>();
 
-        private void Start()
+        public void Initialize()
         {
             GetAttributes();
             GetCompositeAttributes();

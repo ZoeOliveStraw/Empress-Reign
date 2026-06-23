@@ -11,7 +11,7 @@ namespace Ability_System.Tasks
         
         private void GetNavMeshAgent()
         {
-            navMeshAgent = myAbility.abilityOwner.gameObject.GetComponent<NavMeshAgent>();
+            navMeshAgent = myAbility.myActor.gameObject.GetComponent<NavMeshAgent>();
         }
 
         protected override void Execute()
