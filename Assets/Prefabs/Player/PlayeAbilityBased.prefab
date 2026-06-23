@@ -941,6 +941,8 @@ GameObject:
   - component: {fileID: 8203737891965194643}
   - component: {fileID: 6393560204489681006}
   - component: {fileID: 6821687031718641975}
+  - component: {fileID: 9163676159319097509}
+  - component: {fileID: 8904707172914706500}
   m_Layer: 0
   m_Name: Attributes
   m_TagString: Untagged
@@ -979,8 +981,8 @@ MonoBehaviour:
   OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  attributeType: 0
-  baseValue: 5
+  AttributeEnumType: 0
+  baseValue: 0
 --- !u!114 &6393560204489681006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -997,8 +999,8 @@ MonoBehaviour:
   OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  attributeType: 1
-  baseValue: 5
+  AttributeEnumType: 1
+  baseValue: 0
 --- !u!114 &6821687031718641975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,8 +1017,52 @@ MonoBehaviour:
   OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
-  attributeType: 2
+  AttributeEnumType: 2
+  baseValue: 0
+--- !u!114 &9163676159319097509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351436256887025815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836f53d055c14e141a487a4549adc89f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Attribute_System.AttributeComposite
+  currentValue: 0
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  AttributeEnumType: 3
   baseValue: 5
+  baseAdditive: 0
+  baseMultiplicative: 5
+  additiveAttributes: 00000000
+  multiplicativeAttributes: 
+--- !u!114 &8904707172914706500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4351436256887025815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 836f53d055c14e141a487a4549adc89f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Attribute_System.AttributeComposite
+  currentValue: 0
+  OnValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  AttributeEnumType: 6
+  baseValue: 5
+  baseAdditive: 0
+  baseMultiplicative: 0.6
+  additiveAttributes: 02000000
+  multiplicativeAttributes: 
 --- !u!1 &4519923381493886454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1546,7 +1592,7 @@ MonoBehaviour:
   DelayBeforeExecution: 0
   ExecutionPriority: 0
   myAbility: {fileID: 0}
-  MoveSpeedMultiplier: 1
+  moveSpeedAttribute: 6
   Accelleration: 10
 --- !u!1001 &6286747930604968955
 PrefabInstance:

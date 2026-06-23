@@ -4,28 +4,26 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Attribute_System
 {
-    public enum Attributes
-    {
-        Vitality,
-        Strength,
-        Speed
-    }
     
     public class Attribute : MonoBehaviour
     {
         [HideInInspector] public float currentValue;
         [HideInInspector] public UnityEvent OnValueChanged;
         
-        [SerializeField] public Attributes attributeType;
+        [SerializeField] public AttributeEnum AttributeEnumType;
         [SerializeField] private float baseValue;
         private List<AttributeModifier> modifiers;
 
-        public void Initialize()
+        protected CharacterAttributes MyCharacterAttributes;
+
+        public void Initialize(CharacterAttributes characterAttributes)
         {
             modifiers = new List<AttributeModifier>();
+            MyCharacterAttributes = characterAttributes;
             CalculateCurrentValue();
         }
 
@@ -48,7 +46,7 @@ namespace Attribute_System
             OnValueChanged?.Invoke();
         }
 
-        private void CalculateCurrentValue()
+        public virtual void CalculateCurrentValue()
         {
             float value = baseValue;
             foreach (AttributeModifier modifier in modifiers.Where(m => m.Type == ModifierType.Additive))
@@ -60,7 +58,7 @@ namespace Attribute_System
             {
                  value *= modifier.Value;
             }
-            Debug.LogWarning($"Calculated {attributeType} value: {value}");
+            Debug.LogWarning($"Calculated {AttributeEnumType} value: {value}");
             currentValue = value;
             OnValueChanged?.Invoke();
         }

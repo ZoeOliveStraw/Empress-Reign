@@ -7,7 +7,7 @@ namespace Ability_System.Tasks
 {
     public class AbilityTaskMoveRigidbody_Attribute : AbilityTask
     {
-        [SerializeField] private float MoveSpeedMultiplier;
+        [SerializeField] private AttributeEnum moveSpeedAttribute;
         [SerializeField] private float Accelleration;
 
         private Transform _characterToMove;
@@ -25,9 +25,9 @@ namespace Ability_System.Tasks
             if(_speedAttribute == null) 
             {
                 _speedAttribute = 
-                myAbility.abilityOwner.GetComponent<CharacterAttributes>().GetAttribute(Attributes.Speed);
+                myAbility.abilityOwner.GetComponent<CharacterAttributes>().GetAttribute(moveSpeedAttribute);
             }
-            return _speedAttribute.currentValue * MoveSpeedMultiplier;
+            return _speedAttribute.currentValue;
         }
 
         protected override void Execute()
