@@ -4,8 +4,6 @@ namespace Ability_System
 {
     public struct AbilityParams
     {
-        //THE ACTOR THAT OWNS THE ABILITY
-        public Actor MyActor;
         //AN ACTOR OTHER THAN THE ABILITY OWNER THAT WILL BE AFFECTED BY THE ABILITY
         public Actor TargetActor;
         //A 3D VECTOR THAT CAN BE USED FOR ARGUMENTS
@@ -20,7 +18,6 @@ namespace Ability_System
             Vector2 axis2D = default)
 
         {
-            MyActor = myActor;
             TargetActor = targetActor;
             Axis3D = axis3D;
             Axis2D = axis2D;

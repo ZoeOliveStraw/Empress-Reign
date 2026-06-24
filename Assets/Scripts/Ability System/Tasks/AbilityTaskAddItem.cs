@@ -10,10 +10,10 @@ namespace Ability_System.Tasks
         protected override void Execute()
         {
             base.Execute();
-            if (myAbility.myParams.MyActor != null)
+            if (myAbility.myActor != null)
             {
-                Inventory i = myAbility.myParams.MyActor.GetComponent<Inventory>();
-                Debug.LogWarning($"Affected GameObject: {myAbility.myParams.MyActor.gameObject.name}");
+                Inventory i = myAbility.myActor.GetComponent<Inventory>();
+                Debug.LogWarning($"Affected GameObject: {myAbility.myActor.gameObject.name}");
                 i.AddItem(itemId, amount);
             }
         }

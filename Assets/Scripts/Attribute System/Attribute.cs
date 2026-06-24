@@ -58,7 +58,6 @@ namespace Attribute_System
             {
                  value *= modifier.Value;
             }
-            Debug.LogWarning($"Calculated {AttributeEnumType} value: {value}");
             currentValue = value;
             OnValueChanged?.Invoke();
         }

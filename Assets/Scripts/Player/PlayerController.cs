@@ -7,7 +7,6 @@ namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField] private Actor myActor;
         [SerializeField] private Ability Move;
         [SerializeField] private Ability Look;
         [SerializeField] public Transform cameraAnchor;
@@ -19,10 +18,14 @@ namespace Player
         
         private PlayerInputHandler input;
         private AbilityManager abilityManager;
+        private Actor myActor;
     
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
+            myActor = GetComponent<Actor>();
+            
+            
             input = GetComponent<PlayerInputHandler>();
             abilityManager = GetComponent<AbilityManager>();
             

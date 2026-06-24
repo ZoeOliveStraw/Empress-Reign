@@ -12,7 +12,7 @@ public class AbilityTaskInteract : AbilityTask
         if (myAbility.myParams.TargetActor == null) return;
         AbilityParams newParams = new AbilityParams(
             myActor: myAbility.myParams.TargetActor,
-            targetActor: myAbility.myParams.MyActor);
+            targetActor: myAbility.myActor);
         myAbility.myParams.TargetActor.OnInteraction(newParams);
     }
 }

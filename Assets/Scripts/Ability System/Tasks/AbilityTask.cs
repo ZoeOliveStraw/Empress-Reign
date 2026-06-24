@@ -21,7 +21,11 @@ namespace Ability_System
         public void Initialize(Ability ability)
         {
             myAbility = ability;
+            myAbility = ability;
+            OnInitialize();
         }
+        
+        protected virtual void OnInitialize() { }
 
         public void StartExecution()
         {

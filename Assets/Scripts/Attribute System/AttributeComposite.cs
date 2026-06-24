@@ -16,6 +16,8 @@ namespace Attribute_System
 
         public override void Initialize(CharacterAttributes attributes)
         {
+            additive = new List<Attribute>();
+            multiplicative = new List<Attribute>();
             MyCharacterAttributes = attributes;
             foreach (AttributeEnum attribute in additiveAttributes)
             {

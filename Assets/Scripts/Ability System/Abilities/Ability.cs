@@ -17,7 +17,7 @@ namespace Ability_System
         }
 
         public string abilityName;
-        public Actor myActor;
+        [HideInInspector] public Actor myActor;
         private List<AbilityTask> tasks;
         public AbilityParams myParams;
 
@@ -35,7 +35,6 @@ namespace Ability_System
 
         public void Use(AbilityParams abilityParams = default)
         {
-            Debug.LogWarning($"{abilityName} used by {myActor.name}");
             myParams = abilityParams;
             foreach (AbilityTask task in tasks)
             {

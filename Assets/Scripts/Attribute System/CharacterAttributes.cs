@@ -12,6 +12,8 @@ namespace Attribute_System
 
         public void Initialize()
         {
+            _attributes.Clear();
+            _compositeAttributes.Clear();
             GetAttributes();
             GetCompositeAttributes();
         }
@@ -22,7 +24,6 @@ namespace Attribute_System
             foreach (var attribute in attributes)
             {
                 if (attribute is AttributeComposite) continue;
-                Debug.LogWarning($"Adding attribute {attribute.AttributeEnumType}");
                 _attributes.Add(attribute.AttributeEnumType, attribute);
                 attribute.Initialize(this);
             }
@@ -34,7 +35,6 @@ namespace Attribute_System
             var compositeAttributes = AttributeContainer.GetComponents<AttributeComposite>();
             foreach (AttributeComposite attribute in compositeAttributes)
             {
-                Debug.LogWarning($"Adding attribute {attribute.AttributeEnumType}");
                 _compositeAttributes.Add(attribute.AttributeEnumType, attribute);
                 attribute.Initialize(this);
             }

@@ -223,7 +223,7 @@ Transform:
   m_GameObject: {fileID: 2382789017919956790}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -258,7 +258,7 @@ Transform:
   m_GameObject: {fileID: 2533976144545712425}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.75, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -368,6 +368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9086171081065733214}
+  - component: {fileID: 7745635362086012071}
   m_Layer: 0
   m_Name: Interact
   m_TagString: Untagged
@@ -390,6 +391,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4270696975154301716}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7745635362086012071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3284543361389337630}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4429f4a76c3cf2f4da7824eac822d5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Ability
+  abilityName: Interact
+  myActor: {fileID: 0}
 --- !u!1 &4067539756416140498
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +432,7 @@ Transform:
   m_GameObject: {fileID: 4067539756416140498}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.75, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -581,7 +596,7 @@ MonoBehaviour:
   DelayBeforeExecution: 0
   ExecutionPriority: 0
   myAbility: {fileID: 0}
-  lookSensitivity: 0
+  lookSensitivity: 10
 --- !u!1 &6943174829371591632
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,6 +815,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5461834950893377143}
+  - component: {fileID: 1943528443815745348}
   m_Layer: 0
   m_Name: Jump
   m_TagString: Untagged
@@ -822,6 +838,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4270696975154301716}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1943528443815745348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8857850281983668579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4429f4a76c3cf2f4da7824eac822d5b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Ability
+  abilityName: Jump
+  myActor: {fileID: 0}
 --- !u!1001 &3779909423322182224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -967,7 +997,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52c1eabea40307946b337e57da3d86c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerController
-  myActor: {fileID: 7263728429063534769}
   Move: {fileID: 5858167431558764972}
   Look: {fileID: 4370509721506936903}
   cameraAnchor: {fileID: 7053385867977100628}
@@ -1093,7 +1122,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   AttributeEnumType: 3
-  baseValue: 0
+  baseValue: 5
   baseAdditive: 5
   baseMultiplicative: 5
   additiveAttributes: 00000000
@@ -1115,8 +1144,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   AttributeEnumType: 6
-  baseValue: 0
-  baseAdditive: 0
+  baseValue: 5
+  baseAdditive: 5
   baseMultiplicative: 0.6
   additiveAttributes: 02000000
   multiplicativeAttributes: 
@@ -1146,17 +1175,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7803629513941405852, guid: 28806156d28144644b928bb7f6650539, type: 3}
   m_PrefabInstance: {fileID: 3779909423322182224}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7263728429063534769 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5816712359212337889, guid: 28806156d28144644b928bb7f6650539, type: 3}
-  m_PrefabInstance: {fileID: 3779909423322182224}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881747255831008996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80a716fdfa842754296fe6013a547a7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Character
 --- !u!1001 &6095966188140838877
 PrefabInstance:
   m_ObjectHideFlags: 0

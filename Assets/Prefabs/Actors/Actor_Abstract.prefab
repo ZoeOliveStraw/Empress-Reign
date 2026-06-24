@@ -152,7 +152,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!136 &3295998955957229393
 CapsuleCollider:
@@ -189,9 +189,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80a716fdfa842754296fe6013a547a7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Character
+  actorName: 
   Abilities: {fileID: 0}
   Attributes: {fileID: 8182509405274196483}
   Flags: {fileID: 3435469291553644076}
+  onStartAbilities: []
+  onActivateAbilities: []
+  onDestroyAbilities: []
 --- !u!1 &5313253278331185357
 GameObject:
   m_ObjectHideFlags: 0
