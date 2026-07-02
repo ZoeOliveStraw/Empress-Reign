@@ -48,6 +48,8 @@ namespace Attribute_System
             foreach (Attribute attribute in multiplicative) multiplicativeTotal *= attribute.currentValue;
             
             currentValue = multiplicativeTotal;
+            
+            Debug.LogWarning($"Move speed calculated at: {currentValue}");
         }
     }
 }
