@@ -1,12 +1,16 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Managers
 {
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
-        [SerializeField] public GameObject mainMenu;
+        [SerializeField] public MenuManager menuManager;
+        [SerializeField] public PlayerManager playerManager;
+        [SerializeField] public ItemManager itemManager;
+        [SerializeField] public LevelManager levelManager;
         
         private void Awake()
         {

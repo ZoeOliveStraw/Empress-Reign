@@ -1,7 +1,7 @@
 using Data;
 using UnityEngine;
 
-public class ItemManager : MonoBehaviour
+public class ItemManager : MonoBehaviour, IManagerProperties
 {
     public static ItemManager Instance;
     public SO_MasterItemList masterItemList;
@@ -17,6 +17,25 @@ public class ItemManager : MonoBehaviour
         {
             Destroy(this);
         }
+    }
+    
+    private bool isLoaded;
+    bool IManagerProperties.IsLoaded => isLoaded;
+    void IManagerProperties.SetInstance()
+    {
+        SetInstance();
+    }
+    private void SetInstance()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        isLoaded = true;
     }
 
     public SO_InventoryItem GetItemFromID(EnumItemIds itemId)

@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
 
     private void NewGameClicked()
     {
-        StartCoroutine(SceneLoader.Instance.LoadLevelScene("Dev Gym"));
+        LevelManager.Instance.LoadLevel("Dev Gym");
     }
 
     private void LoadGameClicked()

@@ -10,7 +10,7 @@ public class Activator : MonoBehaviour
 
     public Transform GetPlayerTransform()
     {
-        if(SceneLoader.Instance != null) return SceneLoader.Instance.GetPlayer().transform;
+        if(LevelManager.Instance != null) return LevelManager.Instance.GetPlayer().transform;
         return GameObject.FindGameObjectWithTag("PlayerController").transform;
     }
 }

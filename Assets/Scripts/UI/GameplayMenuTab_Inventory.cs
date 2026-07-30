@@ -25,7 +25,7 @@ namespace UI
         {
             /*if (inventory == null)
             {
-                inventory = SceneLoader.Instance.GetPlayer().GetComponent<PlayerInventory>();
+                inventory = LevelManager.Instance.GetPlayer().GetComponent<PlayerInventory>();
             }
 
             if (inventoryItemIcons == null)

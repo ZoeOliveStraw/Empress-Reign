@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Managers
 {
-    public class MenuManager : MonoBehaviour
+    public class MenuManager : MonoBehaviour, IManagerProperties
     {
         public static MenuManager Instance;
 
@@ -29,9 +29,23 @@ namespace Managers
             }
         }
 
-        private void Start()
+        private bool isLoaded;
+        bool IManagerProperties.IsLoaded => isLoaded;
+        void IManagerProperties.SetInstance()
         {
-            
+            SetInstance();
+        }
+        private void SetInstance()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+            isLoaded = true;
         }
 
         public IEnumerator LoadMainMenu()
