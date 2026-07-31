@@ -10,7 +10,11 @@ namespace Managers
 
         [SerializeField] public UI_LoadingShade loadingShade;
         [SerializeField] public GameObject mainMenu;
+        [SerializeField] public GameObject levelSelectMenu;
         [SerializeField] public GameObject studioSplash;
+        [SerializeField] public GameObject HUD;
+
+        private GameObject currentMenu = null;
         
         private float fadeDuration = 1f;
         private float fadeTimer;
@@ -18,24 +22,10 @@ namespace Managers
         private float targetAlpha;
 
         private bool isFading;
-        
-        private void Awake()
-        {
-            if (Instance == null) Instance = this;
-            else
-            {
-                Destroy(gameObject);
-                return;
-            }
-        }
 
         private bool isLoaded;
-        bool IManagerProperties.IsLoaded => isLoaded;
-        void IManagerProperties.SetInstance()
-        {
-            SetInstance();
-        }
-        private void SetInstance()
+        public bool IsLoaded => isLoaded;
+        public  void SetInstance()
         {
             if (Instance == null)
             {
@@ -43,13 +33,20 @@ namespace Managers
             }
             else
             {
+                Debug.Log("Instance already set");
                 Destroy(gameObject);
             }
             isLoaded = true;
         }
 
-        public IEnumerator LoadMainMenu()
+        public void InitialLoad()
         {
+            StartCoroutine(DoInitialLoad());
+        }
+
+        private IEnumerator DoInitialLoad()
+        {
+            loadingShade.gameObject.SetActive(true);
             studioSplash.SetActive(true);
             mainMenu.SetActive(false);
             loadingShade.FadeIn(2, false);
@@ -59,6 +56,22 @@ namespace Managers
             studioSplash.SetActive(false);
             mainMenu.SetActive(true);
             loadingShade.FadeIn(2, false);
+            currentMenu = mainMenu;
+            loadingShade.gameObject.SetActive(false);
+        }
+
+        public void LoadLevelSelectMenu()
+        {
+            currentMenu.SetActive(false);
+            levelSelectMenu.SetActive(true);
+            currentMenu = levelSelectMenu;
+        }
+
+        public void LoadMainMenu()
+        {
+            currentMenu.SetActive(false);
+            mainMenu.SetActive(true);
+            currentMenu = mainMenu;
         }
     }
 }

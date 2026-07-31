@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -20,12 +21,24 @@ namespace Managers
 
         private void Start()
         {
+            InitializeManagers();
             StartGame();
+        }
+
+        private void InitializeManagers()
+        {
+            menuManager.SetInstance();
+            playerManager.SetInstance();
+            itemManager.SetInstance();
+            levelManager.SetInstance();
+            
+            Debug.Log("Managers Initialized");
         }
 
         private void StartGame()
         {
-            StartCoroutine(MenuManager.Instance.LoadMainMenu());
+            Debug.Log("Calling Initial load");
+            MenuManager.Instance.InitialLoad();
         }
     }
 }

@@ -17,16 +17,9 @@ namespace Managers
         public Action OnLevelLoaded;
         public Action OnReturnToMainMenu;
         
-        private bool isLoaded = false;
-
-        bool IManagerProperties.IsLoaded => isLoaded;
-
-        void IManagerProperties.SetInstance()
-        {
-            SetInstance();
-        }
-
-        private void SetInstance()
+        private bool isLoaded;
+        public bool IsLoaded => isLoaded;
+        public  void SetInstance()
         {
             if (Instance == null)
             {

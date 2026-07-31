@@ -4,14 +4,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MainMenu : MonoBehaviour
+public class UI_MainMenu : MonoBehaviour
 {
     [SerializeField] private Button btnNewGame;
     [SerializeField] private Button btnLoadGame;
     [SerializeField] private Button btnSettings;
     [SerializeField] private Button btnCredits;
 
-    private void Start()
+    private void OnEnable()
     {
         btnNewGame.onClick.AddListener(() => NewGameClicked());
         btnLoadGame.onClick.AddListener(() => LoadGameClicked());
@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
 
     private void NewGameClicked()
     {
-        LevelManager.Instance.LoadLevel("Dev Gym");
+        MenuManager.Instance.LoadLevelSelectMenu();
     }
 
     private void LoadGameClicked()

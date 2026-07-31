@@ -6,26 +6,9 @@ public class ItemManager : MonoBehaviour, IManagerProperties
     public static ItemManager Instance;
     public SO_MasterItemList masterItemList;
     
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(this);
-        }
-    }
-    
     private bool isLoaded;
-    bool IManagerProperties.IsLoaded => isLoaded;
-    void IManagerProperties.SetInstance()
-    {
-        SetInstance();
-    }
-    private void SetInstance()
+    public bool IsLoaded => isLoaded;
+    public  void SetInstance()
     {
         if (Instance == null)
         {

@@ -10,19 +10,9 @@ namespace Managers
         
         [SerializeField] GameObject playerPrefab;
         
-        private void Awake()
-        {
-            if (Instance == null) Instance = this;
-            else Destroy(this);
-        }
-        
         private bool isLoaded;
-        bool IManagerProperties.IsLoaded => isLoaded;
-        void IManagerProperties.SetInstance()
-        {
-            SetInstance();
-        }
-        private void SetInstance()
+        public bool IsLoaded => isLoaded;
+        public  void SetInstance()
         {
             if (Instance == null)
             {
@@ -33,14 +23,6 @@ namespace Managers
                 Destroy(gameObject);
             }
             isLoaded = true;
-        }
-
-        private void Update()
-        {
-            if (PlayerGO == null)
-            {
-                PlayerGO = GameObject.FindGameObjectWithTag("Player");
-            }
         }
     }
 }
