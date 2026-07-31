@@ -20,6 +20,11 @@ public class ItemManager : MonoBehaviour, IManagerProperties
         }
         isLoaded = true;
     }
+    
+    private void Awake()
+    {
+        SetInstance();
+    }
 
     public SO_InventoryItem GetItemFromID(EnumItemIds itemId)
     {

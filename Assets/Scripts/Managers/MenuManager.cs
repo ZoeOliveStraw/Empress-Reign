@@ -39,6 +39,11 @@ namespace Managers
             isLoaded = true;
         }
 
+        private void Awake()
+        {
+            SetInstance();
+        }
+
         public void InitialLoad()
         {
             StartCoroutine(DoInitialLoad());

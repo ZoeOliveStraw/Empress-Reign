@@ -11,7 +11,7 @@ namespace UI
         [SerializeField] SO_MasterSceneList mastersceneList;
         [SerializeField] private GameObject sceneWidgetPrefab;
         [SerializeField] private Transform sceneListParent;
-        private List<GameObject> sceneWidgets;
+        private List<GameObject> sceneWidgets = new();
 
         private void OnEnable()
         {

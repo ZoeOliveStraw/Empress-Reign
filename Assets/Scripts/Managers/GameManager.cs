@@ -15,24 +15,16 @@ namespace Managers
         
         private void Awake()
         {
-            if (Instance == null) Instance = this;
+            if (Instance == null)
+            {
+                Instance = this;
+            }
             else Destroy(this);
         }
 
         private void Start()
         {
-            InitializeManagers();
             StartGame();
-        }
-
-        private void InitializeManagers()
-        {
-            menuManager.SetInstance();
-            playerManager.SetInstance();
-            itemManager.SetInstance();
-            levelManager.SetInstance();
-            
-            Debug.Log("Managers Initialized");
         }
 
         private void StartGame()
