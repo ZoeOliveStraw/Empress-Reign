@@ -1,5 +1,7 @@
+using System;
 using Ability_System;
 using Interactables;
+using Managers;
 using TMPro;
 using UnityEngine;
 
@@ -12,13 +14,24 @@ namespace Player
         [SerializeField] private string interactableTag;
         [SerializeField] private TextMeshProUGUI objectLabel;
         [SerializeField] private PlayerInputHandler _input;
+        [SerializeField] private TextMeshProUGUI interactionLabel;
         
         public Actor _currentActor;
+
+        private void Start()
+        {
+            GetInteractionLabel();
+        }
 
         // Update is called once per frame
         void Update()
         {
             CheckForInteractables();
+        }
+
+        private void GetInteractionLabel()
+        {
+            interactionLabel = MenuManager.Instance.HUD.GetComponent<HUD_Controller>().selectionLabel;
         }
 
         private void CheckForInteractables()
@@ -35,7 +48,7 @@ namespace Player
                 _currentActor = null;
                 
             }
-            objectLabel.text = "";
+            interactionLabel.text = "";
         }
     }
 }

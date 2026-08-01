@@ -53,8 +53,6 @@ public class UI_LoadingShade : MonoBehaviour
         float currentAlpha = Mathf.Lerp(startingAlpha, targetAlpha, t);
 
         SetLoadingShade(currentAlpha);
-        
-        Debug.LogWarning($"CURRENT ALPHA: {currentAlpha}");
 
         if (t >= 1f)
         {

@@ -43,7 +43,14 @@ namespace Managers
 
         private void OnLevelLoaded()
         {
-            PlayerGO = Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
+            SpawnPlayer();
+        }
+
+        private void SpawnPlayer()
+        {
+            Transform spawnLocation = LevelManager.Instance.LevelSpawnManager.GetSpawnPoint();
+            PlayerGO = Instantiate(playerPrefab, spawnLocation.position, spawnLocation.rotation);
+            MenuManager.Instance.SwitchToHUD();
         }
     }
 }

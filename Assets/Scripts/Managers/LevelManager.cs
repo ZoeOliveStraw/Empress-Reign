@@ -9,7 +9,10 @@ namespace Managers
     public class LevelManager : MonoBehaviour, IManagerProperties
     {
         public static LevelManager Instance;
+        private Scene bootstrapScene;
         private Scene loadedScene;
+
+        public LevelSpawnManager LevelSpawnManager => FindObjectOfType<LevelSpawnManager>();
         
         public Action OnStartUnloadLevel;
         public Action OnLevelUnloaded;
@@ -37,6 +40,12 @@ namespace Managers
             SetInstance();
         }
 
+        private void Start()
+        {
+            bootstrapScene = SceneManager.GetActiveScene();
+            SceneManager.SetActiveScene(SceneManager.GetActiveScene());
+        }
+
         public void LoadLevel(string sceneName)
         {
             StartCoroutine(LoadLevelScene(sceneName));
@@ -59,8 +68,8 @@ namespace Managers
             {
                 yield return null;
             }
-            GameManager.Instance.menuManager.gameObject.SetActive(false);
-            loadedScene = UnityEngine.SceneManagement.SceneManager.GetSceneByName(sceneName);
+            loadedScene = SceneManager.GetSceneByName(sceneName);
+            SceneManager.SetActiveScene(loadedScene);
             MenuManager.Instance.loadingShade.FadeIn(2);
             OnLevelLoaded?.Invoke();
         }

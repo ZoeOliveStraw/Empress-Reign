@@ -8,11 +8,15 @@ namespace Managers
     {
         public static MenuManager Instance;
 
+        [Header("Main parts of the UI")]
+        [SerializeField] public GameObject menus;
+        [SerializeField] public GameObject HUD;
+
+        [Header("Menus for the main menu")]
         [SerializeField] public UI_LoadingShade loadingShade;
         [SerializeField] public GameObject mainMenu;
         [SerializeField] public GameObject levelSelectMenu;
         [SerializeField] public GameObject studioSplash;
-        [SerializeField] public GameObject HUD;
 
         private GameObject currentMenu = null;
         
@@ -65,6 +69,20 @@ namespace Managers
             loadingShade.gameObject.SetActive(false);
         }
 
+        public void SwitchToHUD()
+        {
+            Debug.Log("Switching to HUD!");
+            menus.SetActive(false);
+            HUD.SetActive(true);
+        }
+
+        public void SwitchToMenus()
+        {
+            Debug.Log("Switching to Menus!");
+            HUD.SetActive(false);
+            menus.SetActive(true);
+        }
+
         public void LoadLevelSelectMenu()
         {
             currentMenu.SetActive(false);
@@ -74,6 +92,7 @@ namespace Managers
 
         public void LoadMainMenu()
         {
+            Debug.Log("Switching to Main Menu!");
             currentMenu.SetActive(false);
             mainMenu.SetActive(true);
             currentMenu = mainMenu;
