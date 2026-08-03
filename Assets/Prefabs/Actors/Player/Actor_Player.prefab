@@ -557,6 +557,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Actor_Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4055623280772424884, guid: 28806156d28144644b928bb7f6650539, type: 3}
+      propertyPath: m_TagString
+      value: Multitag
+      objectReference: {fileID: 0}
     - target: {fileID: 5816712359212337889, guid: 28806156d28144644b928bb7f6650539, type: 3}
       propertyPath: Abilities
       value: 
@@ -564,6 +568,10 @@ PrefabInstance:
     - target: {fileID: 5816712359212337889, guid: 28806156d28144644b928bb7f6650539, type: 3}
       propertyPath: actorName
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5816712359212337889, guid: 28806156d28144644b928bb7f6650539, type: 3}
+      propertyPath: Tags.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8102863068467065161, guid: 28806156d28144644b928bb7f6650539, type: 3}
       propertyPath: m_LocalPosition.x
@@ -698,8 +706,8 @@ MonoBehaviour:
   interactionDistance: 2
   raycastOrigin: {fileID: 7053385867977100628}
   interactableTag: 
-  objectLabel: {fileID: 0}
   _input: {fileID: 362345696013528320}
+  interactionLabel: {fileID: 0}
   _currentActor: {fileID: 7263728429063534769}
 --- !u!114 &362345696013528320
 MonoBehaviour:

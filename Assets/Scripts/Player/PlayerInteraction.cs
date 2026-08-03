@@ -12,7 +12,6 @@ namespace Player
         [SerializeField] private float interactionDistance;
         [SerializeField] private Transform raycastOrigin;
         [SerializeField] private string interactableTag;
-        [SerializeField] private TextMeshProUGUI objectLabel;
         [SerializeField] private PlayerInputHandler _input;
         [SerializeField] private TextMeshProUGUI interactionLabel;
         
@@ -42,7 +41,7 @@ namespace Player
                 if (hitActor != null)
                 {
                     _currentActor = hitActor;
-                    objectLabel.text = _currentActor.actorName;
+                    interactionLabel.text = _currentActor.actorName;
                     return;
                 }
                 _currentActor = null;

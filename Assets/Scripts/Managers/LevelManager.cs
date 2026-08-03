@@ -48,6 +48,7 @@ namespace Managers
 
         public void LoadLevel(string sceneName)
         {
+            Debug.LogWarning($"Loading level: {sceneName}");
             StartCoroutine(LoadLevelScene(sceneName));
         }
 

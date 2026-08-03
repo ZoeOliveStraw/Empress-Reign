@@ -22,12 +22,14 @@ public class UI_LoadingShade : MonoBehaviour
 
     public void FadeIn(float duration, bool includeLoadingText = true)
     {
+        gameObject.SetActive(true);
         loadingText.gameObject.SetActive(includeLoadingText);
         StartFade(1f, 0f, duration);
     }
 
     public void FadeOut(float duration, bool includeLoadingText = true)
     {
+        gameObject.SetActive(true);
         loadingText.gameObject.SetActive(includeLoadingText);
         StartFade(0f, 1f, duration);
     }
@@ -39,7 +41,6 @@ public class UI_LoadingShade : MonoBehaviour
         duration = Mathf.Max(0.01f, fadeDuration);
         elapsed = 0f;
         isFading = true;
-
         SetLoadingShade(startingAlpha);
     }
 
@@ -58,6 +59,7 @@ public class UI_LoadingShade : MonoBehaviour
         {
             SetLoadingShade(targetAlpha);
             isFading = false;
+            gameObject.SetActive(currentAlpha > 0);
         }
     }
 }

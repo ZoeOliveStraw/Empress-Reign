@@ -99,9 +99,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8102863068467065161}
+  - component: {fileID: 5816712359212337889}
   - component: {fileID: 5805409022007828765}
   - component: {fileID: 3295998955957229393}
-  - component: {fileID: 5816712359212337889}
   m_Layer: 0
   m_Name: Actor_Abstract
   m_TagString: Untagged
@@ -127,6 +127,28 @@ Transform:
   - {fileID: 5658806048349469854}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5816712359212337889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4055623280772424884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a716fdfa842754296fe6013a547a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Character
+  actorName: 
+  Tags: 
+  Abilities: {fileID: 0}
+  Attributes: {fileID: 8182509405274196483}
+  Flags: {fileID: 3435469291553644076}
+  onStartAbilities: []
+  onActivateAbilities: []
+  onDestroyAbilities: []
+  onTriggerEnterAbilities: []
+  triggerTags: 
 --- !u!54 &5805409022007828765
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -177,25 +199,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!114 &5816712359212337889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4055623280772424884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80a716fdfa842754296fe6013a547a7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Character
-  actorName: 
-  Abilities: {fileID: 0}
-  Attributes: {fileID: 8182509405274196483}
-  Flags: {fileID: 3435469291553644076}
-  onStartAbilities: []
-  onActivateAbilities: []
-  onDestroyAbilities: []
 --- !u!1 &5313253278331185357
 GameObject:
   m_ObjectHideFlags: 0

@@ -55,7 +55,6 @@ namespace Managers
 
         private IEnumerator DoInitialLoad()
         {
-            loadingShade.gameObject.SetActive(true);
             studioSplash.SetActive(true);
             mainMenu.SetActive(false);
             loadingShade.FadeIn(2, false);
@@ -66,7 +65,7 @@ namespace Managers
             mainMenu.SetActive(true);
             loadingShade.FadeIn(2, false);
             currentMenu = mainMenu;
-            loadingShade.gameObject.SetActive(false);
+            yield return new WaitForSeconds(2);
         }
 
         public void SwitchToHUD()

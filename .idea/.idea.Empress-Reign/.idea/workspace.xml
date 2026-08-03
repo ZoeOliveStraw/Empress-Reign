@@ -5,18 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a71d7df-6d40-4c7e-bb8d-b75c5020970e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskLoadLevel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Ability System/Tasks/AbilityTaskLoadLevel.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Empress-Reign/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Empress-Reign/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Actors/Actor_Abstract.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Actors/Actor_Abstract.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Actors/Player/Actor_Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Actors/Player/Actor_Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/UI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/UI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/UI/WidgetSceneButton.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/UI/WidgetSceneButton.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameManager.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameManager.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ItemManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ItemManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Dev Gym.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Dev Gym.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Actor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Actor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UI_MenuSceneList.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UI_MenuSceneList.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UI_WidgetSceneButton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UI_WidgetSceneButton.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UI_LoadingShade.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UI_LoadingShade.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +35,9 @@
   &quot;associatedIndex&quot;: 7
 }</component>
   <component name="ProjectId" id="3FE1hgQ6zRjdXA1j9iusaKlAR5o" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -111,6 +114,7 @@
       <workItem from="1782259723582" duration="370000" />
       <workItem from="1782260148927" duration="500000" />
       <workItem from="1785459797381" duration="1780000" />
+      <workItem from="1785711751398" duration="9183000" />
     </task>
     <servers />
   </component>
@@ -126,5 +130,24 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs</url>
+          <line>57</line>
+          <properties documentPath="C:\Projects\Unity\Empress-Reign\Assets\Scripts\Managers\LevelManager.cs" containingFunctionPresentation="Method 'LoadLevelScene'">
+            <startOffsets>
+              <option value="1581" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1616" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
