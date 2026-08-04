@@ -106,6 +106,7 @@ namespace Managers
             Time.timeScale = 0;
             HUD.SetActive(false);
             GameplayMenu.SetActive(true);
+            GameManager.Instance.gameState = GameState.Paused;
         }
 
         public void ShowPauseMenu()
@@ -113,6 +114,7 @@ namespace Managers
             Time.timeScale = 0;
             HUD.SetActive(false);
             PauseMenu.SetActive(true);
+            GameManager.Instance.gameState = GameState.Paused;
         }
 
         public void UnpauseGame()
@@ -121,6 +123,7 @@ namespace Managers
             PauseMenu.SetActive(false);
             GameplayMenu.SetActive(false);
             HUD.SetActive(true);
+            GameManager.Instance.gameState = GameState.Gameplay;
         }
     }
 }

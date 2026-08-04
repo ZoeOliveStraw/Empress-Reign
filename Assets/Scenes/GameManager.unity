@@ -435,6 +435,7 @@ MonoBehaviour:
   playerManager: {fileID: 1361180508}
   itemManager: {fileID: 2002323049}
   levelManager: {fileID: 1240312060}
+  gameState: 0
 --- !u!1 &1442974770
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,6 +723,14 @@ PrefabInstance:
       propertyPath: menus
       value: 
       objectReference: {fileID: 712381632}
+    - target: {fileID: 4882637440540803277, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 4882637440540803277, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 250
+      objectReference: {fileID: 0}
     - target: {fileID: 7155486387247152666, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
       propertyPath: m_Name
       value: UI
