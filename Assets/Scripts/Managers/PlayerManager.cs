@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Data;
 using UnityEngine;
 
 namespace Managers
@@ -8,6 +10,7 @@ namespace Managers
         public static PlayerManager Instance;
         public GameObject PlayerGO;
         
+        public InventoryData inventoryData;
         [SerializeField] GameObject playerPrefab;
 
         private void OnEnable()
@@ -24,7 +27,12 @@ namespace Managers
         {
             SetInstance();
         }
-        
+
+        private void Start()
+        {
+            inventoryData = new InventoryData();
+        }
+
 
         private bool isLoaded;
         public bool IsLoaded => isLoaded;

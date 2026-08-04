@@ -1,19 +1,11 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Data;
-using JetBrains.Annotations;
 
-public class Inventory : MonoBehaviour
-{
-    [SerializeField] private int maxSlots;
-    
-    private List<InventoryStack> _inventoryItems;
-    
-    private void Start()
-    {
-        _inventoryItems = new List<InventoryStack>();
-    }
+public class InventoryData
+{ 
+    private int maxSlots;
+    private List<InventoryStack> _inventoryItems = new();
 
     public virtual bool HasItem(EnumItemIds itemId, int quantity = 1)
     {
@@ -38,7 +30,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void AddItemSingle(EnumItemIds itemId, SO_InventoryItem item)
+    protected void AddItemSingle(EnumItemIds itemId, SO_InventoryItem item)
     {
         for (int i = 0; i < _inventoryItems.Count; i++)
         {

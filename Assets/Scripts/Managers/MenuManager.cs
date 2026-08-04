@@ -104,17 +104,19 @@ namespace Managers
         public void ShowGameplayMenu()
         {
             Time.timeScale = 0;
-            HUD.SetActive(false);
             GameplayMenu.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             GameManager.Instance.gameState = GameState.Paused;
         }
 
         public void ShowPauseMenu()
         {
-            Time.timeScale = 0;
-            HUD.SetActive(false);
-            PauseMenu.SetActive(true);
-            GameManager.Instance.gameState = GameState.Paused;
+           Time.timeScale = 0;
+           PauseMenu.SetActive(true);
+           Cursor.lockState = CursorLockMode.None;
+           Cursor.visible = true;
+           GameManager.Instance.gameState = GameState.Paused;
         }
 
         public void UnpauseGame()
@@ -122,7 +124,8 @@ namespace Managers
             Time.timeScale = 1;
             PauseMenu.SetActive(false);
             GameplayMenu.SetActive(false);
-            HUD.SetActive(true);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             GameManager.Instance.gameState = GameState.Gameplay;
         }
     }

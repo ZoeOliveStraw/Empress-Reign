@@ -92,7 +92,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.GameplayMenuTab_Inventory
   defaultSelection: {fileID: 0}
-  inventoryText: {fileID: 6717833794728838922}
+  prefabInventoryItem: {fileID: 3392524289879023486, guid: ce801434adcbce54ea7ed6ec492f7894, type: 3}
+  prefabEquipmentItem: {fileID: 0}
+  inventoryDisplayContent: {fileID: 8674381045055222045}
 --- !u!1 &2835092752497881908
 GameObject:
   m_ObjectHideFlags: 0

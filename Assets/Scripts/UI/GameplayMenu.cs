@@ -20,7 +20,6 @@ namespace UI
         {
             _input.UI.TabLeft.performed += ctx => ChangeTab(-1);
             _input.UI.TabRight.performed += ctx => ChangeTab(1);
-            OpenTab(currentTabIndex);
         }
 
         private void ChangeTab(int increment)
@@ -33,21 +32,12 @@ namespace UI
         
         public void OpenTab(int tabToOpen)
         {
-            for (int i = 0; i < menuTabs.Count; i++)
-            {
-                if (i == tabToOpen)
-                {
-                    menuTabs[i].gameObject.SetActive(true);
-                }
-                else
-                {
-                    menuTabs[i].gameObject.SetActive(false);
-                }
-            }
+            for (int i = 0; i < menuTabs.Count; i++) menuTabs[i].gameObject.SetActive(i == tabToOpen);
         }
         
         private void OnEnable()
         {
+            OpenTab(currentTabIndex);
             _input.Enable();
         }
 

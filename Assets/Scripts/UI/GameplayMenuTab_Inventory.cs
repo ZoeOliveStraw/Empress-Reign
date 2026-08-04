@@ -23,7 +23,7 @@ namespace UI
 
         private void InitializeInventory()
         {
-            /*if (inventory == null)
+            if (inventory == null)
             {
                 inventory = LevelManager.Instance.GetPlayer().GetComponent<PlayerInventory>();
             }
@@ -36,12 +36,17 @@ namespace UI
             if (inventory != null)
             {
                 RenderInventory();
-            }*/
+            }
         }
 
         public void OnEnable()
         {
             InitializeInventory();
+        }
+
+        public void OnDisable()
+        {
+            
         }
 
         private void RenderInventory()

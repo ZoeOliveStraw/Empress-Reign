@@ -883,9 +883,6 @@ PrefabInstance:
       addedObject: {fileID: 362345696013528320}
     - targetCorrespondingSourceObject: {fileID: 4055623280772424884, guid: 28806156d28144644b928bb7f6650539, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6809017608733155388}
-    - targetCorrespondingSourceObject: {fileID: 4055623280772424884, guid: 28806156d28144644b928bb7f6650539, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7738098541817338936}
     - targetCorrespondingSourceObject: {fileID: 1787668758193290823, guid: 28806156d28144644b928bb7f6650539, type: 3}
       insertIndex: -1
@@ -957,19 +954,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae145e64b0787342933746b91d50831, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player.PlayerInputHandler
---- !u!114 &6809017608733155388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 881747255831008996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c63794b5dd373948a02c9cc0ccbe8fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Inventory
-  maxSlots: 20
 --- !u!114 &7738098541817338936
 MonoBehaviour:
   m_ObjectHideFlags: 0
