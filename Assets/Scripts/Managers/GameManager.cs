@@ -5,6 +5,14 @@ using UnityEngine.Serialization;
 
 namespace Managers
 {
+    public enum GameState
+    {
+        MainMenu,
+        Gameplay,
+        GameplayMenu,
+        Paused
+    }
+    
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
@@ -12,6 +20,8 @@ namespace Managers
         [SerializeField] public PlayerManager playerManager;
         [SerializeField] public ItemManager itemManager;
         [SerializeField] public LevelManager levelManager;
+
+        public GameState gameState;
         
         private void Awake()
         {
@@ -31,6 +41,7 @@ namespace Managers
         {
             Debug.Log("Calling Initial load");
             MenuManager.Instance.InitialLoad();
+            gameState = GameState.MainMenu;
         }
     }
 }

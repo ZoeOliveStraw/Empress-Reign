@@ -1,71 +1,46 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
+    [SerializeField] private Actor actor;
+    
     [Header("Ground Check Points")]
     [SerializeField] private List<Transform> groundCheckPoints;
 
     [Header("Ground Check Settings")]
     [SerializeField] private float checkDistance = 0.2f;
-    [SerializeField] private LayerMask groundLayers = ~0;
+    [SerializeField] private LayerMask groundLayers;
     [SerializeField] private float coyoteTime = 0.2f;
 
     private float currentCoyoteTime;
 
     private bool IsGrounded { get; set; }
-    public bool CanJump  { get; set; }
 
     private void Update()
     {
-        IsGrounded = CheckGrounded();
-        UpdateCoyoteTime();
-        CanJump = IsGrounded || currentCoyoteTime > 0;
+        IsGrounded = DoGroundCheck();
+        actor.Flags.SetFlag(EnumCharacterFlags.Grounded, IsGrounded);
+        Debug.Log($"Grounded: {IsGrounded}");
     }
 
-    private bool CheckGrounded()
+    private bool DoGroundCheck()
     {
-        if (groundCheckPoints == null || groundCheckPoints.Count == 0)
-            return false;
-
-        for (int i = 0; i < groundCheckPoints.Count; i++)
+        foreach (Transform groundCheckPoint in groundCheckPoints)
         {
-            Transform point = groundCheckPoints[i];
-            if (point == null) continue;
-
-            if (Physics.Raycast(
-                    point.position,
-                    Vector3.down,
-                    checkDistance,
-                    groundLayers,
-                    QueryTriggerInteraction.Ignore))
-            {
-                return true;
-            }
+            if (GroundCheckRaycast(groundCheckPoint)) return true;
         }
-
         return false;
     }
 
-    private void UpdateCoyoteTime()
+    private bool GroundCheckRaycast(Transform groundCheckPoint)
     {
-        if(IsGrounded) currentCoyoteTime = coyoteTime;
-        else currentCoyoteTime = Mathf.Clamp(currentCoyoteTime -= Time.deltaTime, 0, coyoteTime);
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (groundCheckPoints == null) return;
-
-        Gizmos.color = IsGrounded ? Color.green : Color.red;
-
-        for (int i = 0; i < groundCheckPoints.Count; i++)
-        {
-            Transform point = groundCheckPoints[i];
-            if (point == null) continue;
-
-            Gizmos.DrawLine(point.position, point.position + Vector3.down * checkDistance);
-            Gizmos.DrawWireSphere(point.position + Vector3.down * checkDistance, 0.025f);
-        }
+        return Physics.Raycast(
+            groundCheckPoint.position,
+            Vector3.down,
+            checkDistance,
+            groundLayers
+        );
     }
 }

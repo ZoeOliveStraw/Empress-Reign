@@ -9,6 +9,7 @@ namespace Player
     {
         [SerializeField] private Ability Move;
         [SerializeField] private Ability Look;
+        [SerializeField] private Ability Jump;
         [SerializeField] public Transform cameraAnchor;
         [SerializeField] public MainHand MainHand;
         [SerializeField] private PlayerInteraction interaction;
@@ -30,8 +31,7 @@ namespace Player
             abilityManager = GetComponent<AbilityManager>();
             
             input.JumpAction.performed += ctx => 
-                abilityManager.UseAbility("Jump",
-                    new AbilityParams(myActor));
+                Jump.Use();
 
             input.InteractAction.performed += ctx => Interact();
             //input.Hotkey1Action.performed += ctx => MainHand.EquipMainHandAbility(slot1Prefab);

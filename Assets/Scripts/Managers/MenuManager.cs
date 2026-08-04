@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Managers
 {
+    
     public class MenuManager : MonoBehaviour, IManagerProperties
     {
         public static MenuManager Instance;
@@ -11,13 +12,16 @@ namespace Managers
         [Header("Main parts of the UI")]
         [SerializeField] public GameObject menus;
         [SerializeField] public GameObject HUD;
-
+        [SerializeField] public GameObject PauseMenu;
+        [SerializeField] public GameObject GameplayMenu;
+        
         [Header("Menus for the main menu")]
         [SerializeField] public UI_LoadingShade loadingShade;
         [SerializeField] public GameObject mainMenu;
         [SerializeField] public GameObject levelSelectMenu;
         [SerializeField] public GameObject studioSplash;
 
+        private bool isPaused;
         private GameObject currentMenu = null;
         
         private float fadeDuration = 1f;
@@ -95,6 +99,28 @@ namespace Managers
             currentMenu.SetActive(false);
             mainMenu.SetActive(true);
             currentMenu = mainMenu;
+        }
+
+        public void ShowGameplayMenu()
+        {
+            Time.timeScale = 0;
+            HUD.SetActive(false);
+            GameplayMenu.SetActive(true);
+        }
+
+        public void ShowPauseMenu()
+        {
+            Time.timeScale = 0;
+            HUD.SetActive(false);
+            PauseMenu.SetActive(true);
+        }
+
+        public void UnpauseGame()
+        {
+            Time.timeScale = 1;
+            PauseMenu.SetActive(false);
+            GameplayMenu.SetActive(false);
+            HUD.SetActive(true);
         }
     }
 }

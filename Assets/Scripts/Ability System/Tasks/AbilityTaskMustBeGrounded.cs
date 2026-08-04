@@ -8,10 +8,6 @@ public class AbilityTaskMustBeGrounded : AbilityTask
 
     public override bool CanExecuteTask()
     {
-        if (groundCheck == null)
-        {
-            groundCheck = PlayerManager.Instance.PlayerGO.GetComponent<GroundCheck>();
-        }
-        return groundCheck.CanJump;
+        return myAbility.myActor.Flags.GetFlag(EnumCharacterFlags.Grounded);
     }
 }
