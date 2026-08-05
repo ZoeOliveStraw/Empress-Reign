@@ -1,16 +1,10 @@
+using Data;
 using UnityEngine;
 
-public class InventoryComponent : MonoBehaviour
+public abstract class InventoryComponent : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract bool InitializeInventory();
+    public abstract void AddItemToInventory(InventoryStack item);
+    public abstract void RemoveItems();
+    public abstract int GetItemCount(EnumItemIds id);
 }
