@@ -13,27 +13,35 @@ namespace UI
         [SerializeField] private GameObject prefabEquipmentItem;
         [SerializeField] private Transform inventoryDisplayContent;
 
+        private InventoryData playerInventoryData;
+        
         private List<UI_InventoryItem> inventoryItemIcons;
-        //private PlayerInventory inventory;
 
-        public void Start()
+        public void Enable()
         {
             InitializeInventory();
         }
 
+        public void Disable()
+        {
+            
+        }
+
+        private void GetPlayerInventory()
+        {
+            playerInventoryData = PlayerManager.Instance.PlayerInventoryData;
+        }
+
         private void InitializeInventory()
         {
-            if (inventory == null)
-            {
-                inventory = LevelManager.Instance.GetPlayer().GetComponent<PlayerInventory>();
-            }
+            if (playerInventoryData == null) GetPlayerInventory();
 
             if (inventoryItemIcons == null)
             {
                 inventoryItemIcons = new List<UI_InventoryItem>();
             }
             
-            if (inventory != null)
+            if (playerInventoryData != null)
             {
                 RenderInventory();
             }

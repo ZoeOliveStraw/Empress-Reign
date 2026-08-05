@@ -47,8 +47,7 @@ namespace Player
             if (interaction._currentActor == null) return;
             
             abilityManager.UseAbility("Interact",
-                new AbilityParams(myActor: interaction._currentActor,
-                    targetActor: myActor));
+                new AbilityParams(targetActor: myActor));
         }
 
         private void PausePressed()

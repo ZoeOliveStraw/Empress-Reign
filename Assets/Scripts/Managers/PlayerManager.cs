@@ -10,7 +10,7 @@ namespace Managers
         public static PlayerManager Instance;
         public GameObject PlayerGO;
         
-        public InventoryData inventoryData;
+        public InventoryData PlayerInventoryData;
         [SerializeField] GameObject playerPrefab;
 
         private void OnEnable()
@@ -30,7 +30,7 @@ namespace Managers
 
         private void Start()
         {
-            inventoryData = new InventoryData();
+            
         }
 
 
@@ -51,6 +51,7 @@ namespace Managers
 
         private void OnLevelLoaded()
         {
+            PlayerInventoryData = new InventoryData();
             SpawnPlayer();
         }
 

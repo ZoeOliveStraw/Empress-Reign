@@ -12,7 +12,6 @@ namespace Ability_System
         public Vector2 Axis2D;
 
         public AbilityParams(
-            Actor myActor = null,
             Actor targetActor = null,
             Vector3 axis3D = default,
             Vector2 axis2D = default)

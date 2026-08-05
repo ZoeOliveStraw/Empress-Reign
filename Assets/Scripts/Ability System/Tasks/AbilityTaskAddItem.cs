@@ -12,9 +12,9 @@ namespace Ability_System.Tasks
             base.Execute();
             if (myAbility.myActor != null)
             {
-                Inventory i = myAbility.myActor.GetComponent<Inventory>();
+                /*Inventory i = myAbility.myActor.GetComponent<Inventory>();
                 Debug.LogWarning($"Affected GameObject: {myAbility.myActor.gameObject.name}");
-                i.AddItem(itemId, amount);
+                i.AddItem(itemId, amount);*/
             }
         }
     }

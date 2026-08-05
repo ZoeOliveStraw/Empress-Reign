@@ -66,7 +66,6 @@ public class Actor : MonoBehaviour
     {
         Debug.Log($"OnTriggerEnterAbilities called");
         AbilityParams newParams = new AbilityParams(
-            myActor: this,
             targetActor:actor);
         foreach (Ability ability in onTriggerEnterAbilities)
         {
@@ -78,13 +77,7 @@ public class Actor : MonoBehaviour
     {
         foreach (Ability ability in onActivateAbilities)
         {
-            ability.Use(GetAbilityParams());
+            ability.Use();
         }
-    }
-
-    public AbilityParams GetAbilityParams()
-    {
-        return new AbilityParams(
-            myActor: GetComponent<Actor>());
     }
 }
