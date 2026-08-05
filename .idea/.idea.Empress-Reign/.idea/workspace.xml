@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9a71d7df-6d40-4c7e-bb8d-b75c5020970e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InventoryNPC.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InventoryNPC.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InventoryPlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/InventoryPlayer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Empress-Reign/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Empress-Reign/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/InventoryComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/InventoryComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +104,7 @@
       <workItem from="1782260148927" duration="500000" />
       <workItem from="1785459797381" duration="1780000" />
       <workItem from="1785711751398" duration="9183000" />
-      <workItem from="1785939274138" duration="1823000" />
+      <workItem from="1785939274138" duration="2312000" />
     </task>
     <servers />
   </component>
@@ -130,13 +126,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Assets/Scripts/Managers/LevelManager.cs</url>
-          <line>57</line>
+          <line>58</line>
           <properties documentPath="C:\Projects\Unity\Empress-Reign\Assets\Scripts\Managers\LevelManager.cs" containingFunctionPresentation="Method 'LoadLevelScene'">
             <startOffsets>
-              <option value="1581" />
+              <option value="1654" />
             </startOffsets>
             <endOffsets>
-              <option value="1616" />
+              <option value="1702" />
             </endOffsets>
           </properties>
           <option name="timeStamp" value="1" />

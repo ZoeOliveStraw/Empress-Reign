@@ -11,6 +11,7 @@ namespace Managers
         public static LevelManager Instance;
         private Scene bootstrapScene;
         private Scene loadedScene;
+        [SerializeField] private float fadeTimeLevels = 1f;
 
         public LevelSpawnManager LevelSpawnManager => FindObjectOfType<LevelSpawnManager>();
         
@@ -54,8 +55,8 @@ namespace Managers
 
         private IEnumerator LoadLevelScene(string sceneName)
         {
-            MenuManager.Instance.loadingShade.FadeOut(2);
-            yield return new WaitForSeconds(2);
+            MenuManager.Instance.loadingShade.FadeOut(fadeTimeLevels);
+            yield return new WaitForSeconds(fadeTimeLevels);
             if (loadedScene.isLoaded)
             {
                 OnStartUnloadLevel?.Invoke();
@@ -71,7 +72,7 @@ namespace Managers
             }
             loadedScene = SceneManager.GetSceneByName(sceneName);
             SceneManager.SetActiveScene(loadedScene);
-            MenuManager.Instance.loadingShade.FadeIn(2);
+            MenuManager.Instance.loadingShade.FadeIn(fadeTimeLevels);
             OnLevelLoaded?.Invoke();
         }
 
@@ -82,7 +83,7 @@ namespace Managers
         
         private IEnumerator DoReturnToMainMenu()
         {
-            MenuManager.Instance.loadingShade.FadeOut(2);
+            MenuManager.Instance.loadingShade.FadeOut(1);
             yield return new WaitForSeconds(2);
             if (loadedScene.isLoaded)
             {
@@ -91,7 +92,6 @@ namespace Managers
                 while (unloadOp != null && !unloadOp.isDone) yield return null;
                 OnLevelUnloaded?.Invoke();
             }
-            
             OnReturnToMainMenu?.Invoke();
         }
     }
