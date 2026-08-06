@@ -22,7 +22,6 @@ public class GroundCheck : MonoBehaviour
     {
         IsGrounded = DoGroundCheck();
         actor.Flags.SetFlag(EnumCharacterFlags.Grounded, IsGrounded);
-        Debug.Log($"Grounded: {IsGrounded}");
     }
 
     private bool DoGroundCheck()

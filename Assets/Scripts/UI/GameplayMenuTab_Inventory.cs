@@ -17,16 +17,6 @@ namespace UI
         
         private List<UI_InventoryItem> inventoryItemIcons;
 
-        public void Enable()
-        {
-            InitializeInventory();
-        }
-
-        public void Disable()
-        {
-            
-        }
-
         private void GetPlayerInventory()
         {
             playerInventoryData = PlayerManager.Instance.PlayerInventoryData;
@@ -50,11 +40,6 @@ namespace UI
         public void OnEnable()
         {
             InitializeInventory();
-        }
-
-        public void OnDisable()
-        {
-            
         }
 
         private void RenderInventory()

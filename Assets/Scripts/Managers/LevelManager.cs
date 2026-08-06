@@ -81,10 +81,11 @@ namespace Managers
             StartCoroutine(DoReturnToMainMenu());
         }
         
-        private IEnumerator DoReturnToMainMenu()
+        public IEnumerator DoReturnToMainMenu()
         {
-            MenuManager.Instance.loadingShade.FadeOut(1);
-            yield return new WaitForSeconds(2);
+            MenuManager.Instance.PauseMenu.SetActive(false);
+            MenuManager.Instance.loadingShade.SetShadeOn();
+            Time.timeScale = 1;
             if (loadedScene.isLoaded)
             {
                 OnStartUnloadLevel?.Invoke();
@@ -93,6 +94,9 @@ namespace Managers
                 OnLevelUnloaded?.Invoke();
             }
             OnReturnToMainMenu?.Invoke();
+            MenuManager.Instance.LoadMainMenu();
+            MenuManager.Instance.loadingShade.FadeIn(1f);
+            yield return new WaitForSeconds(1);
         }
     }
 }

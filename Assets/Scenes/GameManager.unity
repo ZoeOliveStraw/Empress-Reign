@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb7c7debff1b1e43b381c3519ec1861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneManager
+  fadeTimeLevels: 1
 --- !u!1 &1273210751
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,6 +596,34 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1212149727423830197, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212149727423830197, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212149727423830197, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5289498079373084168}
+    - target: {fileID: 1212149727423830197, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212149727423830197, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadMainMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212149727423830197, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenu, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212149727423830197, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1380343323162532504, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
       propertyPath: m_ClearFlags
       value: 2
@@ -783,8 +812,28 @@ PrefabInstance:
     - {fileID: 5156424925565548454, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3586537324244590665, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5289498079373084168}
   m_SourcePrefab: {fileID: 100100000, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+--- !u!1 &5289498079373084167 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3586537324244590665, guid: f6b7983302a58224b81fcd6cb8132e54, type: 3}
+  m_PrefabInstance: {fileID: 5289498079373084166}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5289498079373084168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5289498079373084167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622934c596644b1429eaa12b2171d245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PauseMenu
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

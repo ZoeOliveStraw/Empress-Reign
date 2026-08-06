@@ -44,6 +44,11 @@ public class UI_LoadingShade : MonoBehaviour
         SetLoadingShade(startingAlpha);
     }
 
+    public void SetShadeOn()
+    {
+        SetLoadingShade(1f);
+    }
+
     private void Update()
     {
         if (!isFading) return;

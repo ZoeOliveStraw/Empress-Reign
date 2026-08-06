@@ -95,7 +95,7 @@ namespace Managers
 
         public void LoadMainMenu()
         {
-            Debug.Log("Switching to Main Menu!");
+            SwitchToMenus();
             currentMenu.SetActive(false);
             mainMenu.SetActive(true);
             currentMenu = mainMenu;
