@@ -33,10 +33,10 @@ namespace DefaultNamespace
         public void EquipWeapon(SO_InventoryWeapon weapon)
         {
             Debug.Log("Equipping weapon");
-            GameObject weaponGO = Instantiate(debugWeapon.WeaponPrefab, weaponParent.position, weaponParent.transform.rotation);
+            GameObject weaponGO = Instantiate(debugWeapon.weaponPrefab, weaponParent.position, weaponParent.transform.rotation);
             weaponGO.transform.SetParent(weaponParent);
             currentWeaponPrefab = weaponGO.GetComponent<PlayerWeapon>();
-            currentWeaponPrefab.Initialize(GetComponent<Actor>());
+            currentWeaponPrefab.Initialize(GetComponent<Actor>(), debugWeapon);
             isWeaponEquipped = true;
         }
 

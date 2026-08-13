@@ -19,7 +19,7 @@ MonoBehaviour:
   value: 0
   maxStackSize: 1
   equipmentSlot: 0
-  BaseDamage: 5
-  BaseAttackSpeed: 2
-  DmaageType: 0
-  WeaponPrefab: {fileID: 4719814393039460041, guid: 5c2ef2eadfeebe041a31be49adebe872, type: 3}
+  baseDamage: 5
+  baseAttackSpeed: 0.4
+  damageType: 0
+  weaponPrefab: {fileID: 4719814393039460041, guid: 5c2ef2eadfeebe041a31be49adebe872, type: 3}

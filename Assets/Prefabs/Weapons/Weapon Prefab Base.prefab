@@ -199,6 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3667074722420089739}
   - component: {fileID: 1810459536151597370}
+  - component: {fileID: 3431493901198942062}
   m_Layer: 0
   m_Name: OnPress
   m_TagString: Untagged
@@ -235,6 +236,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Ability_System.Ability
   abilityName: OnPress
   myActor: {fileID: 0}
+--- !u!114 &3431493901198942062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4451624349300051840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0edb272fddafecf4daab465e36ada124, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AbilityTaskPlayAnimation
+  debugMessage: 
+  DelayBeforeExecution: 0
+  ExecutionPriority: 0
+  myAbility: {fileID: 0}
+  animator: {fileID: 6814665724884121317}
+  animationName: Weapon_Hold
 --- !u!1 &4479953858303145194
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,8 @@ public class PlayerWeapon : MonoBehaviour
     public Action OnEquipFinishAction;
     public Action OnUnequipStartAction;
     public Action OnUnequipFinishAction;
+    public Action OnAttackStartAction;
+    public Action OnAttackFinishAction;
 
     private Actor myActor;
     private bool isHolding = false;
@@ -48,9 +50,10 @@ public class PlayerWeapon : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public void Initialize(Actor actor)
+    public void Initialize(Actor actor, SO_InventoryWeapon weaponStats)
     {
         myActor = actor;
+        InitializeWeaponStats(weaponStats);
         abilities.Initialize(actor);
         onEquip.Use();
     }
@@ -65,7 +68,8 @@ public class PlayerWeapon : MonoBehaviour
     public void OnRelease()
     {
         isHolding = false;
-        if(isHolding) onRelease.Use();
+        OnAttackStartAction?.Invoke();
+        onRelease.Use();
         Debug.Log("OnRelease");
     }
 
@@ -99,5 +103,19 @@ public class PlayerWeapon : MonoBehaviour
         onEquip.Use();
         yield return new WaitForSeconds(EquipDuration);
         OnEquipFinishAction?.Invoke();
+    }
+
+    private void InitializeWeaponStats(SO_InventoryWeapon stats)
+    {
+        SetAnimationLength(onPress, 0.2f);
+        SetAnimationLength(onRelease, stats.baseAttackSpeed);
+        SetAnimationLength(onEquip, EquipDuration);
+        SetAnimationLength(onUnequip, EquipDuration);
+    }
+
+    private void SetAnimationLength(Ability ability, float duration)
+    {
+        AbilityTaskPlayAnimation animationTask = ability.gameObject.GetComponent<AbilityTaskPlayAnimation>();
+        animationTask.SetSpeed(duration);
     }
 }
