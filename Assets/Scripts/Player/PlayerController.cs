@@ -1,5 +1,6 @@
 using System.Linq;
 using Ability_System;
+using DefaultNamespace;
 using Managers;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
@@ -12,11 +13,8 @@ namespace Player
         [SerializeField] private Ability Look;
         [SerializeField] private Ability Jump;
         [SerializeField] public Transform cameraAnchor;
-        [SerializeField] public MainHand MainHand;
         [SerializeField] private PlayerInteraction interaction;
-
-        [Header("DEBUG STUFF")] 
-        [SerializeField] public GameObject slot1Prefab;
+        [SerializeField] private InventoryPlayer inventory;
         
         private PlayerInputHandler input;
         private AbilityManager abilityManager;
@@ -33,6 +31,7 @@ namespace Player
             input.InteractAction.performed += ctx => Interact();
             input.Input.UI.Pause.performed += ctx => PausePressed();
             input.Input.UI.Menu.performed += ctx => GameplayMenuPressed();
+            input.Input.Player.EquipWeapon.performed += ctx => inventory.ToggleWeaponEquipped();
         }
 
         // Update is called once per frame
@@ -45,9 +44,9 @@ namespace Player
         private void Interact()
         {
             if (interaction._currentActor == null) return;
-            
-            abilityManager.UseAbility("Interact",
-                new AbilityParams(targetActor: myActor));
+            AbilityParams ap = new AbilityParams(targetActor: myActor);
+            Debug.Log($"Sending {ap.TargetActor.name} to {interaction._currentActor.name}");
+            interaction._currentActor.OnInteraction(ap);
         }
 
         private void PausePressed()

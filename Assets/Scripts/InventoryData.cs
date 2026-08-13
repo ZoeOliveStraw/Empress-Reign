@@ -5,7 +5,7 @@ using Data;
 public class InventoryData
 { 
     private int maxSlots;
-    private List<InventoryStack> _inventoryItems = new();
+    public List<InventoryStack> _inventoryItems = new();
 
     public virtual bool HasItem(EnumItemIds itemId, int quantity = 1)
     {

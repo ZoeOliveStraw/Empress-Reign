@@ -16,6 +16,8 @@ public class Actor : MonoBehaviour
     [SerializeField] private List<Ability> onActivateAbilities = new();
     [SerializeField] private List<Ability> onDestroyAbilities = new();
     [SerializeField] private List<Ability> onTriggerEnterAbilities = new();
+    [SerializeField] private List<Ability> onHitAbilities = new();
+    [SerializeField] private List<Ability> onTakeDamageAbilities = new();
 
     private void Start()
     {
@@ -75,9 +77,27 @@ public class Actor : MonoBehaviour
     
     public void OnDestroy()
     {
-        foreach (Ability ability in onActivateAbilities)
+        foreach (Ability ability in onDestroyAbilities)
         {
             ability.Use();
+        }
+    }
+
+    public void OnHit(AbilityParams abilityParams)
+    {
+        Debug.Log($"OnHit called on {actorName} by {abilityParams.TargetActor.actorName}");
+        foreach (Ability a in onHitAbilities)
+        {
+            a.Use(abilityParams);
+        }
+    }
+
+    public void OnTakeDamage(AbilityParams abilityParams)
+    {
+        Debug.Log($"OnTakeDamage called on {actorName} by {abilityParams.TargetActor.actorName}");
+        foreach (Ability a in onTakeDamageAbilities)
+        {
+            a.Use(abilityParams);
         }
     }
 }

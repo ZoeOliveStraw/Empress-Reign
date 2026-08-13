@@ -59,10 +59,12 @@ namespace UI
 
         private void PopulateInventory()
         {
-            /*for (int i = 0; i < inventory._inventoryItems.Count; i++)
+            List<InventoryStack> data = PlayerManager.Instance.PlayerInventoryData._inventoryItems;
+            Debug.Log($"Inventory stack numbers: {data.Count}");
+            for (int i = 0; i < data.Count; i++)
             {
-                AddItemIcon(inventory._inventoryItems[i], i);
-            }*/
+                AddItemIcon(data[i], i);
+            }
         }
 
         private void AddItemIcon(InventoryStack stack, int index)

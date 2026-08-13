@@ -12,13 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecc261643f189774d83864801e7cb808, type: 3}
   m_Name: SO_Weapon_IronSword
   m_EditorClassIdentifier: Assembly-CSharp::SO_InventoryWeapon
-  itemId: 0
+  itemId: 3
   itemName: Iron Sword
   description: A simple but sturdy iron blade.
   sprite: {fileID: 21300000, guid: 1baffd9334322384e8bfe01245886750, type: 3}
   value: 0
   maxStackSize: 1
   equipmentSlot: 0
-  baseDamage: 5
-  baseAttackSpeed: 1
-  weaponPrefab: {fileID: 5255263486432832377, guid: bbd57ef0f0585cb4bb7cd3cbfc6a2178, type: 3}
+  BaseDamage: 5
+  BaseAttackSpeed: 2
+  DmaageType: 0
+  WeaponPrefab: {fileID: 4719814393039460041, guid: 5c2ef2eadfeebe041a31be49adebe872, type: 3}

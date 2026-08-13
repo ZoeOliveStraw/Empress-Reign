@@ -1,3 +1,4 @@
+using DefaultNamespace;
 using UnityEngine;
 
 namespace Ability_System.Tasks
@@ -12,9 +13,14 @@ namespace Ability_System.Tasks
             base.Execute();
             if (myAbility.myActor != null)
             {
-                /*Inventory i = myAbility.myActor.GetComponent<Inventory>();
-                Debug.LogWarning($"Affected GameObject: {myAbility.myActor.gameObject.name}");
-                i.AddItem(itemId, amount);*/
+                Debug.Log($"Adding {amount} of {ItemManager.Instance.GetItemFromID(itemId).itemName} to Inventory of {myAbility.myParams.TargetActor.name}");
+                InventoryComponent data = myAbility.myParams.TargetActor.gameObject.GetComponent<InventoryComponent>();
+                if (data == null)
+                {
+                    Debug.Log("No InventoryComponent, returning.");
+                    return;
+                }
+                data.AddItemToInventory(itemId, amount);
             }
         }
     }

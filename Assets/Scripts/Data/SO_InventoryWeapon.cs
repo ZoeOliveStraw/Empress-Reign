@@ -6,7 +6,8 @@ using UnityEngine;
 public class SO_InventoryWeapon : SO_InventoryEquipment
 {
     [Header("WEAPON FIELDS")] 
-    [SerializeField] public float baseDamage;
-    [SerializeField] public float baseAttackSpeed;
-    [SerializeField] public GameObject weaponPrefab;
+    [SerializeField] public float BaseDamage;
+    [SerializeField] public float BaseAttackSpeed;
+    [SerializeField] public DamageType DmaageType;
+    [SerializeField] public GameObject WeaponPrefab;
 }

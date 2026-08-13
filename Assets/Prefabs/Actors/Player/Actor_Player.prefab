@@ -24,12 +24,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 876943594041637494}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4902107241690776345}
+  m_Father: {fileID: 7053385867977100628}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &929908999932342281
 GameObject:
@@ -189,6 +189,7 @@ Transform:
   m_Children:
   - {fileID: 997397745882772175}
   - {fileID: 2690385689465884650}
+  - {fileID: 3598678366814023452}
   m_Father: {fileID: 4902107241690776345}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2498096646638516098
@@ -852,9 +853,6 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8102863068467065161, guid: 28806156d28144644b928bb7f6650539, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3598678366814023452}
-    - targetCorrespondingSourceObject: {fileID: 8102863068467065161, guid: 28806156d28144644b928bb7f6650539, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 7053385867977100628}
     - targetCorrespondingSourceObject: {fileID: 8102863068467065161, guid: 28806156d28144644b928bb7f6650539, type: 3}
       insertIndex: -1
@@ -884,6 +882,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4055623280772424884, guid: 28806156d28144644b928bb7f6650539, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7738098541817338936}
+    - targetCorrespondingSourceObject: {fileID: 4055623280772424884, guid: 28806156d28144644b928bb7f6650539, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2767810851842583432}
     - targetCorrespondingSourceObject: {fileID: 1787668758193290823, guid: 28806156d28144644b928bb7f6650539, type: 3}
       insertIndex: -1
       addedObject: {fileID: 827303588661552439}
@@ -923,6 +924,7 @@ MonoBehaviour:
   cameraAnchor: {fileID: 7053385867977100628}
   MainHand: {fileID: 0}
   interaction: {fileID: 8463609008312589441}
+  inventory: {fileID: 2767810851842583432}
   slot1Prefab: {fileID: 0}
 --- !u!114 &8463609008312589441
 MonoBehaviour:
@@ -978,6 +980,20 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1
   coyoteTime: 0.2
+--- !u!114 &2767810851842583432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 881747255831008996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9c488b776894b8bbb8d8ac105c133fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DefaultNamespace.InventoryPlayer
+  debugWeapon: {fileID: 11400000, guid: 3a2db71447c27b841a0ee4a7681b4a06, type: 2}
+  weaponParent: {fileID: 3598678366814023452}
 --- !u!1 &3223447947394518039 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1787668758193290823, guid: 28806156d28144644b928bb7f6650539, type: 3}

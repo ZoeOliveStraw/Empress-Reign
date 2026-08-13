@@ -5827,6 +5827,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2959303458497757175, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5283019
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959303458497757175, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
+      propertyPath: m_Color.g
+      value: 0.43554443
+      objectReference: {fileID: 0}
+    - target: {fileID: 2959303458497757175, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
+      propertyPath: m_Color.r
+      value: 0.36133856
+      objectReference: {fileID: 0}
+    - target: {fileID: 3638026207956466015, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5257912198114947311, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -5907,8 +5923,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5829626581797987869, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
+      propertyPath: m_CellSize.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 5829626581797987869, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
+      propertyPath: m_CellSize.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 7058955507632447419, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674381045055222045, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674381045055222045, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8674381045055222045, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 730
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 7564937336831212738, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7151421b5762ec441a689cb56dc02b3b, type: 3}
